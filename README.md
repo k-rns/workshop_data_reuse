@@ -1,13 +1,14 @@
-# FIXME Lesson title
+# Reusing online data: ERDDAP
 
 [![Create a Slack Account with us](https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg)](https://swc-slack-invite.herokuapp.com/)
 
-This repository generates the corresponding lesson website from [The Carpentries](https://carpentries.org/) repertoire of lessons. 
+This repository is using [The Carpentries](https://carpentries.org/) Github pages template, but the lesson itself has been set up by WHOI technical staff itself. 
+
+
 
 ## Contributing
 
-We welcome all contributions to improve the lesson! Maintainers will do their best to help you if you have any
-questions, concerns, or experience any difficulties along the way.
+We welcome all contributions to improve the lesson! Maintainers will do their best to help you if you have any questions, concerns, or experience any difficulties along the way.
 
 We'd like to ask you to familiarize yourself with our [Contribution Guide](CONTRIBUTING.md) and have a look at
 the [more detailed guidelines][lesson-example] on proper formatting, ways to render the lesson locally, and even
@@ -24,9 +25,7 @@ Look for the tag ![good_first_issue](https://img.shields.io/badge/-good%20first%
 
 Current maintainers of this lesson are 
 
-* FIXME
-* FIXME
-* FIXME
+* Karen Soenen
 
 
 ## Authors
