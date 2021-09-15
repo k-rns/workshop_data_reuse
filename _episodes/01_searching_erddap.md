@@ -9,14 +9,14 @@ objectives:
 keypoints:
 - "First key point. Brief Answer to questions. (FIXME)"
 ---
-FIXME
-
-{% include links.md %}
-
 
 # Search
 
 
 
 # Exercise
+
+{% include links.md %}
+
+
 
