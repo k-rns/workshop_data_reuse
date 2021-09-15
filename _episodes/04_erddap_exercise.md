@@ -1,5 +1,5 @@
 ---
-title: "Reuse an ERDDAP served dataset"
+title: "Exercise"
 teaching: 0
 exercises: 0
 questions:
