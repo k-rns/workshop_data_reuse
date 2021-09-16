@@ -6,6 +6,25 @@
 <!doctype html>
 <html lang="en">
   <head>
+	  
+    <meta name="slug" content="{{project_title}}" />
+    <meta name="startdate" content="{{page.startdate}}" />
+    <meta name="enddate" content="{{page.enddate}}" />
+    <meta name="humandate" content="{{page.humandate}}" />
+    <meta name="country" content="{{page.country}}" />
+    <meta name="venue" content="{{page.venue}}" />
+    <meta name="address" content="{{page.address}}" />
+    <meta name="latlng" content="{{page.latlng}}" />
+    <meta name="language" content="{{page.language}}" />
+    <meta name="eventbrite" content="{{page.eventbrite}}" />
+    <meta name="instructor" content="{{page.instructor|join:'|'}}" />
+    <meta name="helper" content="{{page.helper|join:'|'}}" />
+    <meta name="contact" content="{{page.email}}" />
+    <meta name="carpentry" content="{{site.carpentry}}"
+    {% if page.redirect %}
+    <meta http-equiv="refresh" content="0; url={{page.redirect}}" />
+    {% endif %}
+	  
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="last-modified" content="{{ site.time }}">
