@@ -11,7 +11,7 @@
 carpentry: ""
 
 # Overall title for pages.
-title: "Reusing open data with ERDDAP"
+title: "Reusing Open Data with ERDDAP and Python"
 
 # Life cycle stage of the lesson
 # See this page for more details: https://cdh.carpentries.org/the-lesson-life-cycle.html
