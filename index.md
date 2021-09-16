@@ -37,6 +37,13 @@ SPECIAL REQUIREMENTS
 Modify the block below if there are any special requirements.
 {% endcomment %}
 
+<h2 id="general">General Information</h2>
+Workshops always have the cleanest, best examples of data tables to use, don't they? These tables always seem to be immediately usable for analysis. Getting a raw table usable for analysis is a process called "data wrangling". In this workshop we'll show you how to get to this perfect table using Python and the package Pandas. 
+
+Doing this process correctly will not only make you more efficient, but it will also make your data easier to reuse in the future. 
+
+The workshop is sponsored by a WHOI Academic Programs Doherty Award and a DDVPR Technical Staff Training Award
+
 <p id="requirements">
   <strong>Requirements:</strong> 
   <ul>
