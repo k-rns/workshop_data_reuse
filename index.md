@@ -2,6 +2,10 @@
 layout: lesson
 root: .  # Is the only page that doesn't follow the pattern /:path/index.html
 permalink: index.html  # Is the only page that doesn't follow the pattern /:path/index.html
+---
+
+
+
 venue: "Woods Hole Oceanographic Institution"        # brief name of the institution that hosts the workshop without address (e.g., "Euphoric State University")
 address: "On-line"               # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria"), videoconferencing URL, or 'online'
 country: "us"                    # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes) 
@@ -17,8 +21,6 @@ helper: ["Amber York", "Stace Beaulieu"]     # boxed, comma-separated list of he
 email: ["ksoenen@whoi.edy","stace@whoi.edu", "adyork@whoi.edu"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor
 collaborative_notes:  # optional: URL for the workshop collaborative notes, e.g. an Etherpad or Google Docs document (e.g., https://pad.carpentries.org/2015-01-01-euphoria)
 eventbrite:           # optional: alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
----
-
 
 
 
