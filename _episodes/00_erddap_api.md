@@ -13,7 +13,7 @@ FIXME
 
 {% include links.md %}
 
-
+Resources: https://coastwatch.pfeg.noaa.gov/erddapinfo/index.html 
 
 # Re-using data using ERDDAP: intro
 
