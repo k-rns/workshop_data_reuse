@@ -4,11 +4,12 @@ root: .  # Is the only page that doesn't follow the pattern /:path/index.html
 permalink: index.html  # Is the only page that doesn't follow the pattern /:path/index.html
 ---
 
-<h2 id="lesson_intro">Is this class for me?</h2>
+<h2 id="lesson_intro">Lesson description?</h2>
 
 {% comment %}
-This is an INTRODUCTION to the LESSON and why the people should care about this workshop. Write a good pitch here.
+This is an INTRODUCTION to the LESSON and why the people should care about this workshop. Write a good pitch in the file that is being reference to: {% include data_reuse/intro_lesson.html %}
 {% endcomment %}
+
 {% include data_reuse/intro_lesson.html %}
 
 
