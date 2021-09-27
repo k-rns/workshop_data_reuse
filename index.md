@@ -4,6 +4,13 @@ root: .  # Is the only page that doesn't follow the pattern /:path/index.html
 permalink: index.html  # Is the only page that doesn't follow the pattern /:path/index.html
 ---
 
+<h2 id="lesson_intro">Is this class for me?</h2>
+
+{% comment %}
+This is an INTRODUCTION to the LESSON and why the people should care about this workshop. Write a good pitch here.
+{% endcomment %}
+{% include data_reuse/intro_lesson.html %}
+
 
 {% comment %} 
 {% include gh_variables.html %}
