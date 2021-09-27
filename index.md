@@ -170,23 +170,7 @@ This workshop is based on a few workshops developed by the Carpentries (See <a h
 
 <br>
 
-General Information
 
-Where: This training will take place online. The instructors will provide you with the information you will need to connect to this meeting.
-
-Audience: This workshop is targeted towards the technical WHOI staff in order to improve project efficiency and build technical skills. It will only be held for 20 people at a time through an online Zoom meeting. Registration is required. Please contact stace@whoi.edu for availability.
-
-Prerequisites: To get the most out of this workshop we suggest that participants are already using python for data analysis at a novice or intermediate level. A strong familiarity with Python syntax and basic constructs such as loops, lists and conditionals (i.e. if statements) is required. Python skills covered will progress from novice to intermediate over the course of the workshop.
-
-When: Four half-day, morning workshops on Mondays and Tuesdays. October 26th and 27th, November 2nd and 3rd. Each day will start at 8:30AM and finish at 12:30PM. Breaks will be included in the schedule.
-
-Requirements: Participants must bring a laptop with a Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on. They should have a few specific software packages installed (listed below).
-
-Accessibility: We are dedicated to providing a positive and accessible learning environment for all. Please notify the instructors in advance of the workshop if you require any accommodations or if there is anything we can do to make this workshop more accessible to you.
-
-Contact: Please email adyork@whoi.edu or ksoenen@whoi.edu for more information.
-
-Workshop sponsorship: DDVPR Technical Staff Training Award 
 
 
 > ## Prerequisites
