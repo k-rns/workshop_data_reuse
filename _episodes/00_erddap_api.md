@@ -9,15 +9,43 @@ objectives:
 keypoints:
 - "First key point. Brief Answer to questions. (FIXME)"
 ---
-FIXME
-
 {% include links.md %}
 
 Resources: https://coastwatch.pfeg.noaa.gov/erddapinfo/index.html 
 
-# Re-using data using ERDDAP: intro
+# Why ERDDAP?
+
+[Sample and Data Policy NSF Division of Ocean Sciences](https://www.nsf.gov/pubs/2017/nsf17037/nsf17037.jsp): "PIs are expected to **share with other researchers and the public,** ..., the data,  samples, physical collections, and other supporting materials created or gathered in the course of work under NSF grants."
+
+[OOI Data Policy](https://ooi-website.whoi.edu/wp-content/uploads/2010/05/1102-00010_Data_Use_Policy_OOI.pdf): In principle, all OOI data will be made **publicly available**, free of charge, to anyone. 
 
 
+
+Data acquisition -> Data Analysis -> Repository -> **Reusing**
+
+
+
+Reusing data from another source is often difficult:
+
+* different way of requesting data
+* different formats: you work with R while colleague is working with Matlab and the other one with python
+* Need for standardised metadata
+
+
+
+ERDDAP helps with this:
+
+*  RDDAP makes it easy to access data: ERDDAP is a data server  that gives you a simple, consistent way to download data in the format  and the spatial and temporal coverage that you want.
+
+* Humans and machines can use ERDDAP:ERDDAP is a web application  with an interface for people to use.  It is also a RESTful web service  that allows data access directly from any computer program (e.g. Matlab, R, or  webpages).              
+
+* Make customized maps and graphs: Use ERRDAP to generate .png and .pdf files on-the-fly from gridded and tabular scientific datasets  and insert them directly into webpages.
+
+* Search for datasets
+
+
+
+Whn
 
 Reusing data: using ERDDAP as a tool
 
