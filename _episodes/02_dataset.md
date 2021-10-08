@@ -18,11 +18,12 @@ keypoints:
 # Sections To Do
 
 * Opening Jupyter Notebook
-
 * Find a dataset in ERDDAP that you would like to use (using python notebook or erddap self)
 * Using ERDDAP with R resources: https://docs.ropensci.org/rerddap/articles/Using_rerddap.html  using the package rerrdap. 
 * Missing: finding a dataset of interest? Maybe later in the topic aggregating data. 
 * Packages to install: pandas, urllib, erddapy
+* ERDDAP metadata
+* Searching erddap
 
 # The ERDDAP REST API Services
 
