@@ -1,5 +1,7 @@
 The newly developed course markdown files can be found in the folder _episodes/
 
+The landing page schedule changes based on the headers in the individual markdown files. The order of the markdown files is based on the numbering of the .md names. So use name number if wanting to change the order of your lesson. 
+
 
 
 # Reusing online data: ERDDAP

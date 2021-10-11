@@ -134,3 +134,13 @@ ERDDAP is both:
 * Web application = webpage 
 
 Fhttps://coastwatch.pfeg.noaa.gov/erddap/rest.html
+
+
+
+# Searching different erddap servers
+
+Missing: finding a dataset of interest? Maybe later in the topic aggregating data. 
+
+* ERDDAP metadata
+* Searching erddap
+
