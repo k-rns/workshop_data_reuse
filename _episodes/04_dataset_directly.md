@@ -22,6 +22,8 @@ In the previous lesson, we downloaded our dataset file to our local machine. Now
 
 
 
+
+
 ### Create your ERDDAP dataset URL programmatically:
 
 
@@ -30,11 +32,10 @@ In the previous lesson, we downloaded our dataset file to our local machine. Now
 #Import erddap package into 
 from erddapy import ERDDAP
 
-
 # Create your ERDDAP dataset URL in python: 
-server = 'https://erddap-uncabled.oceanobservatories.org/uncabled/erddap'
+server = 'https://erddap.bco-dmo.org/erddap/tabledap'
 
-dataset_id = 'CP05MOAS-GL336-02-FLORTM000-flort_m_glider_instrument-telemetered-deployment0005-tabledap'
+dataset_id = 'tabledapbcodmo_dataset_712367'
 
 constraints = {
     'time>=': '2017-10-11T00:00:00Z',

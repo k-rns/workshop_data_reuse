@@ -1,29 +1,29 @@
 ---
-title: "From the ERDDAP data server to your Python environment"
+title: "From the ERDDAP dataset to your computer"
 teaching: 20
 exercises: 30
 questions:
-- "How do I import an ERDDAP dataset into Python?"
-- "How do I interact with the dataset in Python"
+- "How do a download an ERDDAP table dataset to my local computer using python?"
 objectives:
-- "Importing data from an ERDDAP server into your Python environment "
-- "Interact with data"
+- "Creating the ERDDAP download URL"
+- "Downloading an ERRDAP table dataset using the urllib library"
 keypoints:
-- "There are keypackages necessary to import data from ERDDAP into Python: pandas, urllib"
-- "Data can be downloaded locally or be interacted with directly using erddapy"
-- "You can asses your data package in Python"
+- "Tabledap request URLs are in the form: server/tabledap/datasetID.fileType{?query}"
+- "urllib library works with https protocols"
+- ""
 ---
 
 
 
 # The ERDDAP REST API Services
 
-We'll import data in the notebook
+
 
 Requesting data using a URL. 
 
 **Tabledap request URLs must be in the form** 
-https://coastwatch.pfeg.noaa.gov/erddap/tabledap/*[datasetID](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#datasetID)*.*[fileType](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#fileType)*{?*[query](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#query)*}
+
+server/tabledap/datasetID.fileType{?query }https://coastwatch.pfeg.noaa.gov/erddap/tabledap/*[datasetID](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#datasetID)*.*[fileType](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#fileType)*{?*[query](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#query)*}
 
 **Tabledap request URLs must be in the form** 
 https://coastwatch.pfeg.noaa.gov/erddap/tabledap/*[datasetID](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#datasetID)*.*[fileType](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#fileType)*{?*[query](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#query)*} 
@@ -127,7 +127,7 @@ Download/import the **urllib package** into the Python environment  to work with
 import urllib.request
 
 #define the url you want to download
-download_url = https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_712367.csvp?tank%2CpH%2CTemp%2Cgenotype%2CJuly_mass%2CAugust_mass%2CSeptember_mass 
+download_url = https://erddap.bco-dmo.org/erddap/tabledapbcodmo_dataset_712367.csvp?tank%2CpH%2CTemp%2Cgenotype%2CJuly_mass%2CAugust_mass%2CSeptember_mass 
     
 # Define where you want to save the file on your computer
 path_to_save = 
@@ -163,20 +163,9 @@ Subset your data of interest by adjusting the URL.
 
 # Make a map
 
+If a dataset has location data (latitude, longitude or local coordinates), they can also be mapped in python. 
+
 ```Python
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-# Aggregating data
 
