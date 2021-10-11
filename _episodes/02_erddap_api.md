@@ -1,8 +1,9 @@
 ---
-title: "ERDDAP, API, REST, URL, ...: Acronym to Data Reuse"
+title: "ERDDAP, API, REST, URL: Acronym to data reuse"
 teaching: 0
 exercises: 0
 questions:
+
 - "What is ERDDAP"
 - "Why is ERDDAP important for data reuse?"
 objectives:
