@@ -1,5 +1,5 @@
 ---
-title: "Working with the Jupyter Notebook"
+title: "Brushing up Jupyter Notebook"
 teaching: 10
 exercises: 0
 questions:
@@ -9,7 +9,8 @@ objectives:
 - "Opening a Notebook using Anaconda "
 - "Use commands to execute a Jupyter Notebook"
 keypoints:
-- ""
+- "Edit mode & Command mode"
+- "Import key command"
 
 ---
 

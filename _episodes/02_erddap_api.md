@@ -1,13 +1,16 @@
 ---
-title: "Introduction to serving datasets online"
+title: "ERDDAP, API, REST, URL, ...: From Acronym to Data Reuse"
 teaching: 0
 exercises: 0
 questions:
-- "Key question (FIXME)"
+- "What is ERDDAP"
+- "Why is ERDDAP important for data reuse?"
 objectives:
-- "First learning objective. (FIXME)"
+- "Understand all the different factors for reusing online data with ERDDAP"
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "ERDDAP:"
+- "API:"
+- "URL:"
 ---
 {% include links.md %}
 
