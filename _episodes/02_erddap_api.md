@@ -1,6 +1,6 @@
 ---
 title: "ERDDAP, API, REST, URL: Acronym to data reuse"
-teaching: 0
+teaching: 45
 exercises: 0
 questions:
 

@@ -1,7 +1,7 @@
 ---
 title: "Online data to your computer"
 teaching: 20
-exercises: 30
+exercises: 0
 questions:
 - "How do a download an ERDDAP table dataset to my local computer using python?"
 objectives:

@@ -1,7 +1,7 @@
 ---
 title: "Aggregating multiple datasets"
 teaching: 20
-exercises: 30
+exercises: 25
 questions:
 - "How can I work with different datasets?"
 objectives:
