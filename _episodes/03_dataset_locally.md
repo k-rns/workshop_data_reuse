@@ -1,5 +1,5 @@
 ---
-title: "From the ERDDAP dataset to your computer"
+title: "Online data to your computer"
 teaching: 20
 exercises: 30
 questions:
@@ -167,5 +167,4 @@ If a dataset has location data (latitude, longitude or local coordinates), they 
 
 ```Python
 ```
-
 

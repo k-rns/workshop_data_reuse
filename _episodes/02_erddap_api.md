@@ -1,5 +1,5 @@
 ---
-title: "ERDDAP, API, REST, URL, ...: From Acronym to Data Reuse"
+title: "ERDDAP, API, REST, URL, ...: Acronym to Data Reuse"
 teaching: 0
 exercises: 0
 questions:

@@ -1,5 +1,5 @@
 ---
-title: "From the ERDDAP data server to your Python environment"
+title: "Online data to your Python environment"
 teaching: 20
 exercises: 30
 questions:

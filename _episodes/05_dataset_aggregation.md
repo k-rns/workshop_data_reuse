@@ -1,5 +1,5 @@
 ---
-title: "Aggregating different datasets"
+title: "Aggregating multiple datasets"
 teaching: 20
 exercises: 30
 questions:
