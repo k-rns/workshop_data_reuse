@@ -26,8 +26,6 @@ In the previous lesson, we downloaded our dataset file to our local machine. Now
 
 ### Create your ERDDAP dataset URL programmatically:
 
-
-
 ```Python
 #Import erddap package into 
 from erddapy import ERDDAP
@@ -59,8 +57,6 @@ variables = [
  'time',
 ]
 ```
-
-
 
 ```Python
 e = ERDDAP(
