@@ -15,19 +15,29 @@ keypoints:
 ---
 {% include links.md %}
 
-Resources: https://coastwatch.pfeg.noaa.gov/erddapinfo/index.html 
-
-# Why ERDDAP?
-
-[Sample and Data Policy NSF Division of Ocean Sciences](https://www.nsf.gov/pubs/2017/nsf17037/nsf17037.jsp): "PIs are expected to **share with other researchers and the public,** ..., the data,  samples, physical collections, and other supporting materials created or gathered in the course of work under NSF grants."
-
-[OOI Data Policy](https://ooi-website.whoi.edu/wp-content/uploads/2010/05/1102-00010_Data_Use_Policy_OOI.pdf): In principle, all OOI data will be made **publicly available**, free of charge, to anyone. 
 
 
+# Open Data
+
+Open data has the potential to accelerate science. If we don't have to re-invent the wheel, we can move forward in a faster way.
+
+When applying for grants nowadays, often there is a requirement that as a scientist you need to share your data with the public:
+
+* **NSF-OCE**: [Sample and Data Policy NSF Division of Ocean Sciences](https://www.nsf.gov/pubs/2017/nsf17037/nsf17037.jsp): *"PIs are expected to **share with other researchers and the public,** ..., the data,  samples, physical collections, and other supporting materials created or gathered in the course of work under NSF grants."*
+* **Ocean Observatory Initiative**: [OOI Data Policy](https://ooi-website.whoi.edu/wp-content/uploads/2010/05/1102-00010_Data_Use_Policy_OOI.pdf): In principle, *all OOI data will be made **publicly available**, free of charge, to anyone.*
+* **Biogeochemical Argo**: [data management rules](https://biogeochemical-argo.org/data-management.php): *data are made **publicly available***
+
+
+
+When working with Open Data it is important that end-users reusing data have all the knowedge necessary to be able to trust and understand the data they want to re-use.  End-users can be 
+
+Domain-specific repositories and data centers have the role to make sure the data they received have the right metadata and are standardised and make them publicly available. 
 
 Data acquisition -> Data Analysis -> Repository -> **Reusing**
 
 
+
+# Aligning data sources 
 
 Reusing data from another source is often difficult:
 
@@ -48,6 +58,8 @@ ERDDAP helps with this:
 * Search for datasets
 
 
+
+Many repositories use an erddap server to share their 
 
 Whn
 
@@ -89,7 +101,9 @@ Full API reference can be found [here](https://hmedrano.github.io/erddap-python/
 
 **BCO-DMO ERDDAP**
 
-From https://oceanobservatories.org/erddap-server/
+From https://oceanobservatories.usa open border when 
+
+org/erddap-server/
 
 The OOI ERDDAP (National Ocean and Atmospheric Administration’s  Environmental Research Division’s Data Access Program) Server provides a simple, consistent way to access and download OOI data. Datasets can be downloaded in common file formats (e.g, CSV, NetCDF, or JSON), with the capability of creating graphs and maps, and used in several different  applications and utilities such as Python, R, Javascript, and MATLAB.
 
@@ -129,22 +143,28 @@ Subsetting data
 
 
 
-# API
 
-API is the acronym for Application Programming Interface, which is a  software intermediary that allows two applications to talk to each  other. Each time you use an app like Facebook, send an instant message,  or check the weather on your phone, you’re using an API.
-
-ERDDAP is both:
-
-* Web application = webpage 
-
-Fhttps://coastwatch.pfeg.noaa.gov/erddap/rest.html
 
 
 
 # Searching different erddap servers
 
-Missing: finding a dataset of interest? Maybe later in the topic aggregating data. 
+
+
+BCO-DMO ERDDAP: https://erddap.bco-dmo.org/erddap/index.html
+
+OOI: https://erddap.dataexplorer.oceanobservatories.org/erddap/index.html 
+
+BGC-Argo: Do they have an erddap server?  
+
+## Exercise:
+
+Search for a dataset on their specific servers via the web application. Inspect the metadata, can you understand the dataset enought to be able to use it? : 
 
 * ERDDAP metadata
 * Searching erddap
+
+
+
+
 

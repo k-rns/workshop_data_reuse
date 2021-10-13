@@ -54,6 +54,22 @@ https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_712367.htmlTable?tank%
 
 
 
+# API
+
+Resources: https://coastwatch.pfeg.noaa.gov/erddapinfo/index.html 
+
+API is the acronym for Application Programming Interface, which is a  software intermediary that allows two applications to talk to each  other. Each time you use an app like Facebook, send an instant message,  or check the weather on your phone, you’re using an API.
+
+ERDDAP is both:
+
+* Web application = webpage 
+
+Fhttps://coastwatch.pfeg.noaa.gov/erddap/rest.html
+
+
+
+
+
 # Download a dataset to your local machine
 
 Download your dataset to your local machine in the file type you need.
