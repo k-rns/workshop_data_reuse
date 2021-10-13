@@ -68,7 +68,9 @@ Fhttps://coastwatch.pfeg.noaa.gov/erddap/rest.html
 
 
 
+erddap-python is a python client for the ERDDAP Restful API, it can  obtain server status metrics, provides search methods, gives tabledap  and griddap class objects for metadata and data access.
 
+All information about every ERDAPP request is contained in the URL of each request, which  makes it easy to automate searching for and using data in other  applications. Proficient users can build their own custom interfaces.  
 
 # Download a dataset to your local machine
 

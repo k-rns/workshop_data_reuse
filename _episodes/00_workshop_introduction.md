@@ -33,8 +33,6 @@ Fun fact: Number of living things I take care of has gone up by billions since t
 **Emma Ozanich**   
 **Ariel Vardi-Chouchana**  
 
-# Goals  
-
 # Zoom "hygiene"  
 We are here to help! Raise your hand an a helper or instructor will direct message you in the chat! If it can be solved via chat you and the helper will move to a breakout room to talk through the problem.  
 You should see this toolbar in the participants window:  
@@ -47,3 +45,6 @@ We are dedicated to providing a welcoming and supportive environment for all peo
 * Focus on what is best for the community
 * Show courtesy and respect towards other community members
 
+# Goals
+
+This is not a course on how to install data, but very much a course on how to extract and re-use data.
