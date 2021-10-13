@@ -11,7 +11,9 @@ questions:
 
 **Karen Soenen**  
 
-<img src="https://lh6.googleusercontent.com/D0h-hpEIBdNTqonlQZtCJGKKOMru1EuDGe2xSCPZuYmiBzub1gOVGZmYESejYX5INAFNnkrzKwFbMXi9tGrbtJgrDhw8YST9g5LhZxEKpHTlYtMynj2t0Nf1V8OfEWpwMGEyFORU_kk=s0" alt="img" style="zoom:10%;" />
+
+
+<img src="https://lh6.googleusercontent.com/D0h-hpEIBdNTqonlQZtCJGKKOMru1EuDGe2xSCPZuYmiBzub1gOVGZmYESejYX5INAFNnkrzKwFbMXi9tGrbtJgrDhw8YST9g5LhZxEKpHTlYtMynj2t0Nf1V8OfEWpwMGEyFORU_kk=s0" alt="img" style="zoom:10%;" width="500" height="400"/>
 
 Data Manager BCO-DMO - Biology  
 Research Interests: building bridges and improving collaboration using data & maps.  
