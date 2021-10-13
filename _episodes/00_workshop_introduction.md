@@ -1,15 +1,24 @@
+---
+title: "Workshop Introduction "
+teaching: 10
+exercises: 0
+questions:
+- "Who is helping with this workshop?"
+- "How can I ask for help?"
+- "Code of Conduct"
+---
 # Workshop Introduction
 
 **Karen Soenen**  
 Data Manager BCO-DMO - Biology  
 Research Interests: building bridges and improving collaboration using data & maps.  
 Fun Fact: I\`m renovating a sailboat, but can`t actually sail yet  
-  
+
 **Amber York**  
 Data Manager  BCO-DMO - Biology  
 Research Interests: Open data, informatics (making data more interoperable and reusable), benthic organism identification.  
 Fun Fact: My first pet was an octopus named Spike.  
-  
+
 **Stace Beaulieu**  
 Senior Research Specialist in Biology  
 Research Interests: Marine Biodiversity, Ocean Informatics, Deep-Sea Invertebrates!  
@@ -37,5 +46,4 @@ We are dedicated to providing a welcoming and supportive environment for all peo
 * Gracefully accept constructive criticism
 * Focus on what is best for the community
 * Show courtesy and respect towards other community members
-
 
