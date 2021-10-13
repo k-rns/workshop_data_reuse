@@ -30,7 +30,7 @@ Fun fact: Number of living things I take care of has gone up by billions since t
 We are here to help! Raise your hand an a helper or instructor will direct message you in the chat! If it can be solved via chat you and the helper will move to a breakout room to talk through the problem.  
 You should see this toolbar in the participants window:  
 
-## Code of Conduct  
+# Code of Conduct  
 We are dedicated to providing a welcoming and supportive environment for all people, regardless of background or identity. Any form or behaviour to exclude, intimidate, or cause discomfort is a violation of the Code of Conduct. In order to foster a positive and professional learning environment we encourage the following kinds of behaviours in all platforms and events:
 * Use welcoming and inclusive language
 * Be respectful of different viewpoints and experiences
