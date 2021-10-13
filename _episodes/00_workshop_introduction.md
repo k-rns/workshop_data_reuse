@@ -13,7 +13,7 @@ questions:
 
 
 
-<img src="https://lh6.googleusercontent.com/D0h-hpEIBdNTqonlQZtCJGKKOMru1EuDGe2xSCPZuYmiBzub1gOVGZmYESejYX5INAFNnkrzKwFbMXi9tGrbtJgrDhw8YST9g5LhZxEKpHTlYtMynj2t0Nf1V8OfEWpwMGEyFORU_kk=s0" alt="img" style="zoom:10%;" width="500" height="400"/>
+<img src="https://lh6.googleusercontent.com/D0h-hpEIBdNTqonlQZtCJGKKOMru1EuDGe2xSCPZuYmiBzub1gOVGZmYESejYX5INAFNnkrzKwFbMXi9tGrbtJgrDhw8YST9g5LhZxEKpHTlYtMynj2t0Nf1V8OfEWpwMGEyFORU_kk=s0" alt="img" style="zoom:10%;" width="600" height="400"/>
 
 Data Manager BCO-DMO - Biology  
 Research Interests: building bridges and improving collaboration using data & maps.  
@@ -23,7 +23,7 @@ Fun Fact: I\`m renovating a sailboat, but can`t actually sail yet
 
 **Amber York**  
 
-<img src="https://lh6.googleusercontent.com/cxmaPk0BQKNKzvSV010qZ-8IWqbX1VLIbLAFDAC3buNdnaAWciPDu31FhSdedNu1PFIL8cdMTzM2YYOLmeUqvQLhSvt9CPF9DInfdyaDX5OYufPwzgwvXP1D-fCmHxuj-2bBA3H8Xek=s0" alt="img" style="zoom:25%;" />
+<img src="https://lh6.googleusercontent.com/cxmaPk0BQKNKzvSV010qZ-8IWqbX1VLIbLAFDAC3buNdnaAWciPDu31FhSdedNu1PFIL8cdMTzM2YYOLmeUqvQLhSvt9CPF9DInfdyaDX5OYufPwzgwvXP1D-fCmHxuj-2bBA3H8Xek=s0" alt="img" style="zoom:25%;" width="300" height="300"/>
 
 Data Manager  BCO-DMO - Biology  
 Research Interests: Open data, informatics (making data more interoperable and reusable), benthic organism identification.  
@@ -33,7 +33,7 @@ Fun Fact: My first pet was an octopus named Spike.
 
 **Stace Beaulieu**  
 
-<img src="https://lh3.googleusercontent.com/--T-yEclL07Ks8icCcTzhiiYRqn8Ugnlwt277C7pOG9Wr0eq99H4UAQFhyTeTmQbZNehNudL7Y_dQ5f1eGnUPhVDQHpEvY_2cZF2RvLp-a95yrBc6EpUDtbMAC4Jh9SJ32YV9xNzMpE=s0" alt="img" style="zoom:20%;" />
+<img src="https://lh3.googleusercontent.com/--T-yEclL07Ks8icCcTzhiiYRqn8Ugnlwt277C7pOG9Wr0eq99H4UAQFhyTeTmQbZNehNudL7Y_dQ5f1eGnUPhVDQHpEvY_2cZF2RvLp-a95yrBc6EpUDtbMAC4Jh9SJ32YV9xNzMpE=s0" alt="img" style="zoom:20%;" width="600" height="400"/>
 
 Senior Research Specialist in Biology  
 Research Interests: Marine Biodiversity, Ocean Informatics, Deep-Sea Invertebrates!  
@@ -43,7 +43,7 @@ Fun fact: I love mountain biking, yes even on Cape Cod
 
 **Brett Longworth**  
 
-<img src="https://lh6.googleusercontent.com/YIWcbA1U8IPMk3dx8D4R5HHxrbZMQSuOQGf16SH-6BJ6aTjcgi56MoHo66cl5se1bbnM26F910O-Ta7SHCh4x7M9JGSqyA12WOGABj02Q4bA7vmcO_R8v9dKneJmKIyslHqoLby1WmQ=s0" alt="img" style="zoom:15%;" />
+<img src="https://lh6.googleusercontent.com/YIWcbA1U8IPMk3dx8D4R5HHxrbZMQSuOQGf16SH-6BJ6aTjcgi56MoHo66cl5se1bbnM26F910O-Ta7SHCh4x7M9JGSqyA12WOGABj02Q4bA7vmcO_R8v9dKneJmKIyslHqoLby1WmQ=s0" alt="img" style="zoom:15%;" width="400" height="600"/>
 
 Research Associate in G&G  
 Research Interests: Radiocarbon, data mining for method development, links between the marine and terrestrial carbon cycle.  
