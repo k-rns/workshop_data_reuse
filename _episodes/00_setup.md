@@ -1,4 +1,22 @@
 ---
+title: "Finding Data"
+teaching: 45
+exercises: 0
+questions:
+
+- "What is ERDDAP"
+- "Why is ERDDAP important for data reuse?"
+objectives:
+- "Understand all the different factors for reusing online data with ERDDAP"
+keypoints:
+- "ERDDAP:"
+- "API:"
+- "URL:"
+---
+{% include links.md %}
+
+```
+---
 title: "Set up "
 teaching: 10
 exercises: 0
@@ -9,7 +27,7 @@ questions:
 ---
 
 {% include links.md %}
-
+```
 # Python - Anaconda
 
 Anaconda is a Python distribution platform. It comes with the most popular data science libraries and their dependencies pre-installed, and a package manager to assist with installing additional libraries that weren’t pre-installed.
