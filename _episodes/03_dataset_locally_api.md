@@ -1,5 +1,5 @@
 ---
-title: "Online data to your computer"
+title: "Downloading data using an ERDDAP URL"
 teaching: 20
 exercises: 0
 questions:

@@ -1,5 +1,5 @@
 ---
-title: "ERDDAP, API, REST, URL: Acronym to data reuse"
+title: "Finding Data"
 teaching: 45
 exercises: 0
 questions:
