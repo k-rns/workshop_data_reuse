@@ -1,33 +1,15 @@
 ---
-title: "Finding Data"
+title: "Set up"
 teaching: 45
-exercises: 0
-questions:
-
-- "What is ERDDAP"
-- "Why is ERDDAP important for data reuse?"
-objectives:
-- "Understand all the different factors for reusing online data with ERDDAP"
-keypoints:
-- "ERDDAP:"
-- "API:"
-- "URL:"
----
-{% include links.md %}
-
-```
----
-title: "Set up "
-teaching: 10
 exercises: 0
 questions:
 - "How to install Python Anaconda"
 - "Create an environment called "erddap"
 - "Install the following libraries in your conda environment: pandas erddapy urllib3 "
 ---
-
 {% include links.md %}
-```
+
+
 # Python - Anaconda
 
 Anaconda is a Python distribution platform. It comes with the most popular data science libraries and their dependencies pre-installed, and a package manager to assist with installing additional libraries that weren’t pre-installed.
@@ -43,62 +25,92 @@ Anaconda is a Python distribution platform. It comes with the most popular data 
 #### MacOS3
 
 1. Open https://www.anaconda.com/products/individual#download-section with your web browser.
+
 2. Download the Anaconda Installer with Python 3 for macOS (you can either use the Graphical or the Command Line Installer).
+
 3. Install Python 3 by running the Anaconda Installer using all of the defaults for installation.
 
-## Conda Environment and Packages
+   
 
-**Install method 1: Make a new environment and launch jupyter notebooks using the new environment.**
+## Create a new conda environment called "erddap"
 
-This method is more fail-safe than method 2.   As shown in the  steps below you have to use a command line (Anaconda Prompt(win)  Terminal(Mac/Linux) to launch jupyter notebook, not the graphical  Anaconda Navigator.
+**Make a new environment and launch jupyter notebooks using the new environment.**
+
+You have to use a command line (Anaconda Prompt(Windows)  Terminal(Mac/Linux) to launch jupyter notebook, not the graphical  Anaconda Navigator.
 
 **Steps**
 
 1. Open Anaconda Prompt (Windows) or Terminal(Mac/Linux)
 
-2. Enter the following command to create a new environment called "pyaos-lesson"
+2. Enter the following command to create a new environment called "erddap" and define the python version to install with it. 
 
    ```
-   conda create -n pyaos-lesson -c conda-forge jupyter xarray netCDF4 cartopy cmocean cmdline_provenance plotnine
+   conda create --name erddap python=3.9
    ```
 
-3. You will be asked if you would like to install the packages after they are found.  Press Yes (y).
+   Anaconda prompt view: 
+
+   ![image-20211020041849254](C:\Users\ksoenen\AppData\Roaming\Typora\typora-user-images\image-20211020041849254.png)
+
+   ![image-20211020042128981](C:\Users\ksoenen\AppData\Roaming\Typora\typora-user-images\image-20211020042128981.png) 
+
+   
+
+   You will be asked if you would like to install the packages after they are found.  Press Yes (y).
+
+   ![image-20211020042157757](C:\Users\ksoenen\AppData\Roaming\Typora\typora-user-images\image-20211020042157757.png)
+
+   
+
+3. Activate the environment that you just created
+
+   ```
+   conda activate erddap
+   ```
+
+    After this command you should see "(erddap)" at the start of your line.
+
+   ![image-20211020042310247](C:\Users\ksoenen\AppData\Roaming\Typora\typora-user-images\image-20211020042310247.png)
+
+
+
+## Install packages in the new "erddap" environment
+
+1. Make sure that the **erddap environment is active**. You know that the erddap environment is active if you see (erddap) at the start of your line. If it is not active, activate the erddap environment with the following command:
+
+   ```
+   conda activate erddap
+   ```
+
+   Install the package "pandas" 
+
+   ```
+   conda install -c anaconda pandas
+   ```
+
+   You will be asked if you would like to install the packages after they are found.  Press Yes (y).
+
+3. Install the package "erddapy"
+
+   ```
+   conda install -c conda-forge erddapy
+   ```
+
+   You will be asked if you would like to install the packages after they are found.  Press Yes (y).
 
    You should see messages for Preparing, Verifying, and Executing the "transaction" and end with a line that says "done"
 
-4. Enter the new environment you created.  After this command you should see "(pyaos-lesson)" at the start of your line.
+4. Launch the jupyter notebook with the following command. A new browser window should pop up with jupyter notebook in it.
 
-   ```
-   conda activate pyaos-lesson
-   ```
-
-5. Launch the jupyter notebook with the following command. A new browser window should pop up with jupyter notebook in it.
-
-   ```
+5. ```
    jupyter notebook
    ```
+   
+   NOTE: I got the error "*jupyter' is not recognized as an internal or external command, operable program or batch file."* I installed jupyter in the environment with the following command: ```conda install -c anaconda jupyter```
 
-6. Test your installs worked. See "Testing Your Installs" section Below.
+5. Test if your your installs worked. See "Testing Your Installs" section Below.
 
-**Install Method 2: Using the base environment**
 
-This method may be quite slow for some people and you may encounter more issues than method 1. But if you have completed your installs with this method and your test works then you are all set for the worksohp  (See "Testing Your Installs" section Below).
-
-**Steps**
-
-1. Enter `conda activate base` and press enter to  execute. This makes sure you are in your base environment. It won't hurt anything if you already are in base and run it anyway.  You should see  "(base)" at the beginning of your line.	 		
-
-2. Run the following commands one at a time.  It may take a few  minutes to respond during this process.  You will be asked if you would  like to install the packages after they are found.  Press Yes (y).		
-
-   `conda install jupyter xarray netCDF4 cartopy`
-
-   `conda install -c conda-forge cmocean cmdline_provenance plotnine`
-
-   You should see messages for Preparing, Verifying, and Executing the "transaction" and end with a line that says "done"
-
-3. Launch the jupyter nootebook using either Anaconda Navigator or  command line using Anaconda Prompt(Windows) or Terminal(Mac/Linux).
-
-4. Test your installs worked. See "Testing Your Installs" section Below.
 
 ## Testing the installs
 
@@ -108,22 +120,14 @@ This method may be quite slow for some people and you may encounter more issues 
 
 **Steps**
 
-1.  Open an Anaconda Prompt(Win) or Terminal(Mac/Linux). 
+1. Open an Anaconda Prompt(Win) or Terminal(Mac/Linux). 
 
-2. Enter the environment wish to use.  After this command you should  see the environment name "(pyaos-lesson)"  or "base" at the start of  your line.
-
-   If you installed your packages using method 1:
+2. Enter the environment wish to use.  After this command you should  see the environment name "(erddap)"  or "base" at the start of  your line.
 
    ```
-   conda activate pyaos-lesson
+   conda activate erddap
    ```
-
-   If you installed your packages using method 2:
-
-   ```
-   conda activate base
-   ```
-
+   
 3. Launch the jupyter notebook with the following command. A new browser window should pop up right into your notebook.
 
    ```
@@ -136,45 +140,11 @@ For a brief introduction to Jupyter Notebooks, please consult our [Introduction 
 
 
 
+###  Jupyter notebook basics
 
-
-
-
-install anaconda
-
-
-
-installing packages in environment
-
-* create environment erddap install python 3.9
-
-
-
-Opening Jupyter Notebook in the environment you just installed. 
-
-libraries:
-
- * urllib.request: ```conda install -c anaconda urllib3```
- * pandas: ```conda install -c anaconda pandas```
- * erddapy: ```conda install -c conda-forge erddapy  ```
-
-```conda install 
-conda install -c anaconda urllib3
-```
-
-``` conda install 
-conda install -c conda-forge pandas erddapy
-```
-
-![image-20211019053913314](C:\Users\ksoenen\AppData\Roaming\Typora\typora-user-images\image-20211019053913314.png)
-
-![image-20211019054305817](C:\Users\ksoenen\AppData\Roaming\Typora\typora-user-images\image-20211019054305817.png)
-
-# Open Jupyter notebook 
+##### Open Jupyter notebook 
 
 Make sure that you open Jupyter notebook at the same location you want your data to reside.
-
-
 
 STEP 1. Start Jupyter Notebook
 
@@ -190,7 +160,7 @@ STEP 2: Open new notebook in the location
 
 Reminder [Python Notebook Basics](https://nbviewer.org/github/jupyter/notebook/blob/master/docs/source/examples/Notebook/Notebook%20Basics.ipynb)
 
-### Edit mode
+###### Edit mode
 
 Edit mode is indicated by a green cell border and a prompt showing in the editor area:
 
@@ -200,7 +170,7 @@ When a cell is in edit mode, you can type into the cell, like a normal text edit
 
 Enter edit mode by pressing `Enter` or using the mouse to click on a cell's editor area.
 
-### Command mode
+###### Command mode
 
 Command mode is indicated by a grey cell border with a blue left margin:
 
@@ -218,4 +188,16 @@ We recommend learning the command mode shortcuts in the following rough order:
 4. Cell creation: `a`, `b`
 5. Cell editing: `x`, `c`, `v`, `d`, `z`
 6. Kernel operations: `i`, `0` (press twice)
+
+
+
+
+
+
+
+
+
+
+
+
 
