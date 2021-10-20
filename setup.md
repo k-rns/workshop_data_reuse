@@ -106,7 +106,7 @@ You have to use a command line (Anaconda Prompt(Windows)  Terminal(Mac/Linux) to
 
 **Steps**
 
-1. Open an Anaconda Prompt(Win) or Terminal(Mac/Linux). 
+1. Open an Anaconda Prompt(Windows) or Terminal(Mac/Linux). 
 
 2. Activate the erddap environment.  After this command you should  see the environment name "(erddap)"  or "base" at the start of  your line.
 
@@ -119,41 +119,15 @@ You have to use a command line (Anaconda Prompt(Windows)  Terminal(Mac/Linux) to
 
    A browser window will open with your notebook in it. If you close  the page and need to get back to it, you can copy and paste the link  shown in your Anaconda Prompt/Terminal.  Or you can try the default  address	http://localhost:8888.
 
-4. Once your notebook is open, import the pandas and erddapy library into the notebook with the following commands: 
+4. Once your notebook is open, import the pandas and erddapy library into the notebook with the following commands and run the cell. If no errors occur you successfully installed the packages!
 
-   ``` import erddapy pandas```
+   ``` import pandas```
 
+   ``` import erddapy```
    
+   ![image-20211020121824355](assets/img/jupyter_start_III.png)
 
 
-#### Jupyter Notebook
-
-*if you have just followed the instructions to install packages and  test them, you already have launched jupyter notebook and can use that.  You can follow these instructions if you don't already have a notebook  running.
-
-**Steps**
-
-1. Open an Anaconda Prompt(Win) or Terminal(Mac/Linux). 
-
-2. Enter the environment wish to use.  After this command you should  see the environment name "(erddap)"  or "base" at the start of  your line.
-
-   ```conda activate erddap```
-   
-    
-   
-3. Launch the jupyter notebook with the following command. A new browser window should pop up right into your notebook.
-
-   ```jupyter notebook```
-
-
-
-   A browser window will open with your notebook in it. If you close  the page and need to get back to it, you can copy and paste the link  shown in your Anaconda Prompt/Terminal.  Or you can try the default  address	http://localhost:8888.
-
-4. Once your notebook is open, import the pandas and erddapy library into the notebook with the following commands: 
-
-   ```import erddapy pandas```
-
-   
-   
 
 ###  Jupyter notebook basics
 
