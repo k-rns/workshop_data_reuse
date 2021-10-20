@@ -134,9 +134,15 @@ You have to use a command line (Anaconda Prompt(Windows)  Terminal(Mac/Linux) to
    jupyter notebook
    ```
 
-   A browser window will open with your notebook in it. If you close  the page and need to get back to it, you can copy and paste the link  shown in your Anaconda Prompt/Terminal.  Or you can try the default  address	http://localhost:8888/. 		
+   A browser window will open with your notebook in it. If you close  the page and need to get back to it, you can copy and paste the link  shown in your Anaconda Prompt/Terminal.  Or you can try the default  address	http://localhost:8888.
 
-For a brief introduction to Jupyter Notebooks, please consult our [Introduction to Jupyter Notebooks](https://datacarpentry.org/python-ecology-lesson/jupyter_notebooks/) page. If you installed your required packages using [method 2](https://k-rns.github.io/2020-10-26-WHOI-Data/#install-method-2), you can also launch jupyter notebook using the Anaconda Navigator (instead of command line) as shown in that lesson.		 
+4. Once your notebook is open, import the pandas and erddapy library into the notebook with the following commands: 
+
+   ```import erddapy
+   import erddapy pandas
+   ```
+
+   
 
 
 
