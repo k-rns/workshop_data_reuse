@@ -108,7 +108,7 @@ You have to use a command line (Anaconda Prompt(Windows)  Terminal(Mac/Linux) to
 
 1. Open an Anaconda Prompt(Win) or Terminal(Mac/Linux). 
 
-2. Enter the environment wish to use.  After this command you should  see the environment name "(erddap)"  or "base" at the start of  your line.
+2. Activate the erddap environment.  After this command you should  see the environment name "(erddap)"  or "base" at the start of  your line.
 
    ```conda activate erddap```
    
