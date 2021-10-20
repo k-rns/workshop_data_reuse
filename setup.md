@@ -15,8 +15,17 @@ keypoints:
 - "Use conda to install and manage your Python environments."
 ---
 
+{% include links.md %}
 
-
+---
+title: "Set up"
+teaching: 45
+exercises: 0
+questions:
+- "How to install Python Anaconda"
+- "Create an environment called "erddap"
+- "Install the following libraries in your conda environment: pandas erddapy urllib3 "
+---
 {% include links.md %}
 
 
@@ -54,33 +63,30 @@ You have to use a command line (Anaconda Prompt(Windows)  Terminal(Mac/Linux) to
 
 2. Enter the following command to create a new environment called "erddap" and define the python version to install with it. 
 
-   ```
-   conda create --name erddap python=3.9
-   ```
+   ```conda create --name erddap python=3.9```
 
-   Anaconda prompt view: 
+  
 
-   ![image-20211020041849254](C:\Users\ksoenen\AppData\Roaming\Typora\typora-user-images\image-20211020041849254.png)
+   Anaconda prompt view:    ![image-20211020042310247](../assets/img/install_basepath.png)
 
-   ![image-20211020042128981](C:\Users\ksoenen\AppData\Roaming\Typora\typora-user-images\image-20211020042128981.png) 
+   ![image-20211020042310247](../assets/img/install_environment.png) 
 
    
 
    You will be asked if you would like to install the packages after they are found.  Press Yes (y).
 
-   ![image-20211020042157757](C:\Users\ksoenen\AppData\Roaming\Typora\typora-user-images\image-20211020042157757.png)
+   ![image-20211020042310247](../assets/img/install_environment_II.png)
 
    
 
 3. Activate the environment that you just created
 
-   ```
-   conda activate erddap
-   ```
+   ```conda activate erddap```
+
 
     After this command you should see "(erddap)" at the start of your line.
 
-   ![image-20211020042310247](C:\Users\ksoenen\AppData\Roaming\Typora\typora-user-images\image-20211020042310247.png)
+   ![image-20211020042310247](assets/img/install_environment_III.png)
 
 
 
@@ -88,37 +94,31 @@ You have to use a command line (Anaconda Prompt(Windows)  Terminal(Mac/Linux) to
 
 1. Make sure that the **erddap environment is active**. You know that the erddap environment is active if you see (erddap) at the start of your line. If it is not active, activate the erddap environment with the following command:
 
-   ```
-   conda activate erddap
-   ```
+   ```conda activate errdap```
+   
+2. Install the package "pandas" 
 
-   Install the package "pandas" 
+   ```conda install -c anaconda pandas```
 
-   ```
-   conda install -c anaconda pandas
-   ```
 
    You will be asked if you would like to install the packages after they are found.  Press Yes (y).
 
-2. Install the package "erddapy"
+3. Install the package "erddapy"
 
-   ```
-   conda install -c conda-forge erddapy
-   ```
+   ```conda install -c conda-forge erddapy```
 
-   You will be asked if you would like to install the packages after they are found.  Press Yes (y).
+       You will be asked if you would like to install the packages after they are found.  Press Yes (y).
+    
+       You should see messages for Preparing, Verifying, and Executing the "transaction" and end with a line    that says "done"
 
-   You should see messages for Preparing, Verifying, and Executing the "transaction" and end with a line that says "done"
+4. Launch the jupyter notebook with the following command. A new browser window should pop up with jupyter notebook in it.
 
-3. Launch the jupyter notebook with the following command. A new browser window should pop up with jupyter notebook in it.
+   ```jupyter notebook```
 
-4. ```
-   jupyter notebook
-   ```
 
    NOTE: I got the error "*jupyter' is not recognized as an internal or external command, operable program or batch file."* I installed jupyter in the environment with the following command: ```conda install -c anaconda jupyter```
 
-5. Test if your your installs worked. See "Testing Your Installs" section Below.
+6. Test if your your installs worked. See "Testing Your Installs" section Below.
 
 
 
@@ -137,7 +137,7 @@ You have to use a command line (Anaconda Prompt(Windows)  Terminal(Mac/Linux) to
    ```
    conda activate erddap
    ```
-
+   
 3. Launch the jupyter notebook with the following command. A new browser window should pop up right into your notebook.
 
    ```
@@ -153,8 +153,6 @@ You have to use a command line (Anaconda Prompt(Windows)  Terminal(Mac/Linux) to
    ```
 
    
-
-
 
 ###  Jupyter notebook basics
 
@@ -204,16 +202,3 @@ We recommend learning the command mode shortcuts in the following rough order:
 4. Cell creation: `a`, `b`
 5. Cell editing: `x`, `c`, `v`, `d`, `z`
 6. Kernel operations: `i`, `0` (press twice)
-
-
-
-
-
-
-
-
-
-
-
-
-
