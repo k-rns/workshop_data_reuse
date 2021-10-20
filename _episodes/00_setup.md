@@ -14,7 +14,7 @@ questions:
 
 Anaconda is a Python distribution platform. It comes with the most popular data science libraries and their dependencies pre-installed, and a package manager to assist with installing additional libraries that weren’t pre-installed.
 
-## Installing Anaconda
+## 1. Installing Anaconda
 
 #### Windows
 
@@ -32,7 +32,7 @@ Anaconda is a Python distribution platform. It comes with the most popular data 
 
    
 
-## Create a new conda environment called "erddap"
+## 2. Create a new conda environment called "erddap"
 
 **Make a new environment and launch jupyter notebooks using the new environment.**
 
@@ -71,7 +71,7 @@ You have to use a command line (Anaconda Prompt(Windows)  Terminal(Mac/Linux) to
 
 
 
-## Install packages in the new "erddap" environment
+## 3. Install packages in the new "erddap" environment
 
 1. Make sure that the **erddap environment is active**. You know that the erddap environment is active if you see (erddap) at the start of your line. If it is not active, activate the erddap environment with the following command:
 
@@ -103,7 +103,7 @@ You have to use a command line (Anaconda Prompt(Windows)  Terminal(Mac/Linux) to
 
 
 
-## Testing the installs
+## 4. Testing the installs
 
 #### Jupyter Notebook
 
@@ -145,13 +145,11 @@ STEP 1. Start Jupyter Notebook
 
 Anaconda prompt -> Direct to location -> Start Jupyter Notebook 
 
-![image-20211008061129812](C:\Users\ksoenen\AppData\Roaming\Typora\typora-user-images\image-20211008061129812.png)
-
-
+![image-20211008061300970](../assets/img/jupyter_start_I.png)
 
 STEP 2: Open new notebook in the location
 
-![image-20211008061300970](C:\Users\ksoenen\AppData\Roaming\Typora\typora-user-images\image-20211008061300970.png)
+![image-20211008061300970](../assets/img/jupyter_start_II.png)
 
 Reminder [Python Notebook Basics](https://nbviewer.org/github/jupyter/notebook/blob/master/docs/source/examples/Notebook/Notebook%20Basics.ipynb)
 
