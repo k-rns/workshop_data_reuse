@@ -1,31 +1,7 @@
 ---
-title: "Software installation using conda"
-teaching: 15
-exercises: 15
-questions:
-- "How do I install and manage all the Python libraries that I want to use?"
-- "How do I interact with Python?"
-objectives:
-- "Explain the advantages of Anaconda over other Python distributions."
-- "Extend the number of packages available via conda using conda-forge."
-- "Create a conda environment with the libraries needed for these lessons."
-keypoints:
-- "install plotnine, a required pakcage for our lessons."
-- "xarray and iris are the core Python libraries used in the atmosphere and ocean sciences."
-- "Use conda to install and manage your Python environments."
----
-
-{% include links.md %}
-
----
 title: "Set up"
-teaching: 45
-exercises: 0
-questions:
-- "How to install Python Anaconda"
-- "Create an environment called "erddap"
-- "Install the following libraries in your conda environment: pandas erddapy urllib3 "
 ---
+
 {% include links.md %}
 
 
@@ -67,24 +43,23 @@ You have to use a command line (Anaconda Prompt(Windows)  Terminal(Mac/Linux) to
 
   
 
-   Anaconda prompt view:    ![image-20211020042310247](../assets/img/install_basepath.png)
+   Anaconda prompt view:    ![image-20211020042310247](assets/img/install_basepath.png)
 
-   ![image-20211020042310247](../assets/img/install_environment.png) 
+   ![image-20211020042310247](assets/img/install_environment.png) 
 
    
 
    You will be asked if you would like to install the packages after they are found.  Press Yes (y).
 
-   ![image-20211020042310247](../assets/img/install_environment_II.png)
+   ![image-20211020042310247](assets/img/install_environment_II.png)
 
    
 
 3. Activate the environment that you just created
 
    ```conda activate erddap```
-
-
-    After this command you should see "(erddap)" at the start of your line.
+   
+   after this command you should see (erddap) at the start of your line.
 
    ![image-20211020042310247](assets/img/install_environment_III.png)
 
@@ -107,9 +82,10 @@ You have to use a command line (Anaconda Prompt(Windows)  Terminal(Mac/Linux) to
 
    ```conda install -c conda-forge erddapy```
 
-       You will be asked if you would like to install the packages after they are found.  Press Yes (y).
-    
-       You should see messages for Preparing, Verifying, and Executing the "transaction" and end with a line    that says "done"
+   You will be asked if you would like to install the packages after they are found.  Press Yes (y).
+
+   You should see messages for Preparing, Verifying, and Executing the "transaction" and end with a line    that says "done"
+
 
 4. Launch the jupyter notebook with the following command. A new browser window should pop up with jupyter notebook in it.
 
