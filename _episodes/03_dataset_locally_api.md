@@ -44,7 +44,8 @@ Thus, the query is often a comma-separated list of desired variable names, follo
   
   
 
-
+Example dataset that we will be using: https://www.bco-dmo.org/dataset/817214 
+Erddap table: https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_815732.htmlTable 
 
 BCO-DMO example dataset: https://www.bco-dmo.org/dataset/712367 
 
@@ -72,11 +73,20 @@ erddap-python is a python client for the ERDDAP Restful API, it can  obtain serv
 
 All information about every ERDAPP request is contained in the URL of each request, which  makes it easy to automate searching for and using data in other  applications. Proficient users can build their own custom interfaces.  
 
-# Download a dataset to your local machine
+# Download a dataset to your local machine using python
+Example dataset that we will be using: https://www.bco-dmo.org/dataset/817214 
+Erddap table: https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_815732.htmlTable 
 
-Download your dataset to your local machine in the file type you need.
+## 1. Building the URL of the dataset
 
-Example repo: https://coastwatch.gitbook.io/satellite-course/tutorials/python-tutorial/1.-how-to-work-with-satellite-data-in-python 
+### Server you want to download data
+https://erddap.bco-dmo.org/
+
+### Protocol
+
+tabledap / griddap
+
+
 
 ### Choose your file type
 
@@ -176,7 +186,7 @@ Subset your data of interest by adjusting the URL.
 
 ```python
 ```
-
+build the URL, but put restraints on your data. 
 
 
 # Make a map
@@ -186,3 +196,11 @@ If a dataset has location data (latitude, longitude or local coordinates), they 
 ```Python
 ```
 
+
+
+## Resources
+
+https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_817214.htmlTable?Cruise_ID%2Clatitude%2Clongitude%2CDate_Time_PST%2CTemperature%2CSalinity%2CChlorophyll%2Ctime
+Download your dataset to your local machine in the file type you need.
+
+Example repo: https://coastwatch.gitbook.io/satellite-course/tutorials/python-tutorial/1.-how-to-work-with-satellite-data-in-python 

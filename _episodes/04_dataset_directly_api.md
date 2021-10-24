@@ -20,60 +20,72 @@ keypoints:
 
 In the previous lesson, we downloaded our dataset file to our local machine. Now we will not download it to your local machine, but use in in your python environment directly. 
 
+erddapy is a package that helps
 
 
 
+## Create the URL
 
-### Create your ERDDAP dataset URL programmatically:
+First we need to instantiate the ERDDAP URL constructor for a server ( erddapy server object). 
 
-```Python
+```python
 #Import erddap package into 
 from erddapy import ERDDAP
 
-# Create your ERDDAP dataset URL in python: 
-server = 'https://erddap.bco-dmo.org/erddap/tabledap'
-
-dataset_id = 'tabledapbcodmo_dataset_712367'
-
-constraints = {
-    'time>=': '2017-10-11T00:00:00Z',
-    'time<=': '2017-10-18T08:16:57Z',
-    'latitude>=': 38.0,
-    'latitude<=': 41.0,
-    'longitude>=': -72.0,
-    'longitude<=': -69.0,
-}
-
-depth = 'ctdgv_m_glider_instrument_sci_water_pressure_dbar'
-salinity = 'ctdgv_m_glider_instrument_practical_salinity'
-temperature = 'ctdgv_m_glider_instrument_sci_water_temp'
-
-variables = [
-  depth,
- 'latitude',
- 'longitude',
-  salinity,
-  temperature,
- 'time',
-]
-```
-
-```Python
+# Initiate the ERDDAP URL constructor for a server. 
 e = ERDDAP(
-    server=server,
-    dataset_id=dataset_id,
-    constraints=constraints,
-    variables=variables,
-    protocol='tabledap',
-    response='mat',
+    server= "https://erddap.bco-dmo.org/erddap/",
+    protocol="tabledap",
+    response="csv",
 )
-
-print(e.get_download_url())
 ```
 
 
 
-#### RERRDAP: package for R users to work directly with erddap servers
+Now we can populate the object a dataset id, variables of interest,  and its constraints ( populate the object with constraints, the variables of interest, and the dataset id.) We can download the csvp response with the `.to_pandas` method.
+
+```python
+e.dataset_id = "bcodmo_dataset_815732"
+
+e.variables = [
+    "Cruise_ID",
+    "latitude",
+    "longitude",
+    "Date_Time_PST",
+    "Temperature",
+    "Salinity",
+    "Chlorophyll",
+    "time"
+]
+
+e.constraints = {
+    "time>=": "2016-01-26T09:45Z",
+    "time<=": "2016-12-07T04:40Z",
+}
+```
+
+```python
+# Print the URL - check
+url = e.get_download_url()
+print(url)
+```
+
+## Import it into a pandas 
+```
+# Convert URL to pandas dataframe
+df = e.to_pandas(
+    index_col="time (UTC)",
+    parse_dates=True,
+).dropna()
+
+df.head()
+```
+
+
+
+
+
+### RERRDAP: package for R users to work directly with erddap servers
 
 Information an using erddap: https://docs.ropensci.org/rerddap/articles/Using_rerddap.html  
 
@@ -99,3 +111,10 @@ scatter3D(x = glider$longitude , y = glider$latitude , z = -glider$depth, colvar
 ```
 
 ![outcome_R_example](https://docs.ropensci.org/rerddap/man/figures/glider-1.png)
+
+## Resources: 
+
+* erddapy quick intro: https://ioos.github.io/erddapy/00-quick_intro-output.html
+* erddapy use with gliders rich signel: 
+* notebook community: https://notebook.community/pyoceans/erddapy/notebooks/quick_intro 
+
