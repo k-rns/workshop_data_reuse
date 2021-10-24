@@ -15,20 +15,27 @@ keypoints:
 
 
 
-# The ERDDAP REST API Services
+We have just seen that we can search erddap for datsets. The main takeaways were:
 
+* ERDDAP is a tool and many repositories can have an ERDDAP server, which means that there are **many erddap servers** around. 
 
+* You can search 2 types of data, also called **protocols**: tabledap & griddap 
+* A dataset in ERDDAP can be downloaded in many **different file types**, based on what you need.
+* You can **subset a dataset** based on constrainting the variables.
 
-Requesting data using a URL. 
+In the next chapter, we'll see that an ERDDAP can not only be used in the web interface like we did, but also as a URL that computer programs can use  (in this case, to get data, graphs, and information about datasets).
+
+# The ERDDAP REST API Service
+
+What is an API? API is the acronym for Application Programming Interface, which is a  software intermediary that allows two applications to talk to each  other. Each time you use an app like Facebook, send an instant message,  or check the weather on your phone, you’re using an API.
+
+ERDDAP REST API Service = Requesting data using a URL. All information about every ERDAPP request is contained in the URL of each request, which  makes it easy to automate searching for and using data in other  applications. Proficient users can build their own custom interfaces.  
 
 **Tabledap request URLs must be in the form** 
 
-server/tabledap/datasetID.fileType{?query }https://coastwatch.pfeg.noaa.gov/erddap/tabledap/*[datasetID](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#datasetID)*.*[fileType](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#fileType)*{?*[query](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#query)*}
+* server/protocol/datasetID.fileType{?query }
+*  https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDySst.htmlTable?longitude,latitude,time,station,wmo_platform_code,T_25&time%3E=2015-05-23T12:00:00Z&time%3C=2015-05-31T12:00:00Z 
 
-**Tabledap request URLs must be in the form** 
-https://coastwatch.pfeg.noaa.gov/erddap/tabledap/*[datasetID](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#datasetID)*.*[fileType](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#fileType)*{?*[query](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#query)*} 
-For example, 
-https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDySst.htmlTable?longitude,latitude,time,station,wmo_platform_code,T_25&time%3E=2015-05-23T12:00:00Z&time%3C=2015-05-31T12:00:00Z 
 Thus, the query is often a comma-separated list of desired variable names, followed by a collection of  constraints (e.g., *variable*<*value*),  each preceded by '&' (which is interpreted as "AND").
 
 **Details:**
@@ -44,51 +51,23 @@ Thus, the query is often a comma-separated list of desired variable names, follo
   
   
 
+
+
+# Building the URL of a dataset
 Example dataset that we will be using: https://www.bco-dmo.org/dataset/817214 
 Erddap table: https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_815732.htmlTable 
 
-BCO-DMO example dataset: https://www.bco-dmo.org/dataset/712367 
+**Tabledap request URLs must be in the form** 
+https://coastwatch.pfeg.noaa.gov/erddap/tabledap/*[datasetID](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#datasetID)*.*[fileType](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#fileType)*{?*[query](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#query)*}
 
-Just generate the URL: 
-
-https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_712367.htmlTable?tank%2CpH%2CTemp%2Cgenotype%2CJuly_mass%2CAugust_mass%2CSeptember_mass
-
-
-
-# API
-
-Resources: https://coastwatch.pfeg.noaa.gov/erddapinfo/index.html 
-
-API is the acronym for Application Programming Interface, which is a  software intermediary that allows two applications to talk to each  other. Each time you use an app like Facebook, send an instant message,  or check the weather on your phone, you’re using an API.
-
-ERDDAP is both:
-
-* Web application = webpage 
-
-Fhttps://coastwatch.pfeg.noaa.gov/erddap/rest.html
-
-
-
-erddap-python is a python client for the ERDDAP Restful API, it can  obtain server status metrics, provides search methods, gives tabledap  and griddap class objects for metadata and data access.
-
-All information about every ERDAPP request is contained in the URL of each request, which  makes it easy to automate searching for and using data in other  applications. Proficient users can build their own custom interfaces.  
-
-# Download a dataset to your local machine using python
-Example dataset that we will be using: https://www.bco-dmo.org/dataset/817214 
-Erddap table: https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_815732.htmlTable 
-
-## 1. Building the URL of the dataset
-
-### Server you want to download data
+### 1. Server you want to download data
 https://erddap.bco-dmo.org/
 
-### Protocol
+### 2. Protocol
 
 tabledap / griddap
 
-
-
-### Choose your file type
+### 3. Choose your file type
 
 Specifies the type of table data file that you  want to download. You can use different filetype based on your specific needs and your community, you can download files for matlab binary file, netcdf, .csv (for R and Python), GIS, etc. The column below gives all the formats available:   
 
@@ -139,14 +118,19 @@ IMPORTANT NOTE: The actual extension of the resulting file may be slightly diffe
 
 
 
-### Build the URL 
-
-**Tabledap request URLs must be in the form** 
-https://coastwatch.pfeg.noaa.gov/erddap/tabledap/*[datasetID](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#datasetID)*.*[fileType](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#fileType)*{?*[query](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#query)*}
+## 4. Subset the data
 
 
 
-### Download the dataset with Python
+
+
+NOTE: Just generate the URL: 
+
+https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_712367.htmlTable?tank%2CpH%2CTemp%2Cgenotype%2CJuly_mass%2CAugust_mass%2CSeptember_mass
+
+
+
+# Download the dataset with Python
 
 Download/import the **urllib package** into the Python environment  to work with url's in your environment:  [Python Documentation](https://docs.python.org/3/library/urllib.html)
 
@@ -178,29 +162,10 @@ import pandas as pd
 
 
 
-
-
-# Subsetting datasets
-
-Subset your data of interest by adjusting the URL. 
-
-```python
-```
-build the URL, but put restraints on your data. 
-
-
-# Make a map
-
-If a dataset has location data (latitude, longitude or local coordinates), they can also be mapped in python. 
-
-```Python
-```
-
-
-
 ## Resources
 
 https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_817214.htmlTable?Cruise_ID%2Clatitude%2Clongitude%2CDate_Time_PST%2CTemperature%2CSalinity%2CChlorophyll%2Ctime
 Download your dataset to your local machine in the file type you need.
 
 Example repo: https://coastwatch.gitbook.io/satellite-course/tutorials/python-tutorial/1.-how-to-work-with-satellite-data-in-python 
+
