@@ -9,24 +9,22 @@ objectives:
 - "Importing data from an ERDDAP server into your Python environment "
 - "Interact with data"
 keypoints:
-- "There are keypackages necessary to import data from ERDDAP into Python: pandas, urllib"
+- "There are keypackages necessary to import data from ERDDAP into Python: pandas"
 - "Data can be downloaded locally or be interacted with directly using erddapy"
 - "You can asses your data package in Python"
 ---
-
-
 
 # ERDDAPY library
 
 In the previous lesson, we downloaded our dataset file to our local machine. Now we will not download it to your local machine, but use in in your python environment directly. 
 
-erddapy is a package that helps
+Erddapy is a package that helps create the ERDDAP URLs. You can create virtually any request like, searching for datasets, acquiring metadata, downloading data, etc.
 
 
 
 ## Create the URL
 
-First we need to instantiate the ERDDAP URL constructor for a server ( erddapy server object). 
+Step 1: Instantiate the ERDDAP URL constructor for a server ( erddapy server object). 
 
 ```python
 #Import erddap package into 
@@ -38,23 +36,23 @@ e = ERDDAP(
     protocol="tabledap",
     response="csv",
 )
+print ("Initiation done")
 ```
 
-
-
-Now we can populate the object a dataset id, variables of interest,  and its constraints ( populate the object with constraints, the variables of interest, and the dataset id.) We can download the csvp response with the `.to_pandas` method.
+Step 2: Populate the object with  a dataset id, variables of interest,  and its constraints. We can download the csvp response with the `.to_pandas` method.
 
 ```python
-e.dataset_id = "bcodmo_dataset_815732"
+e.dataset_id = "bcodmo_dataset_817952"
 
 e.variables = [
-    "Cruise_ID",
+    "Cruise",
     "latitude",
     "longitude",
     "Date_Time_PST",
     "Temperature",
     "Salinity",
-    "Chlorophyll",
+    "PN",
+    "POC",
     "time"
 ]
 
@@ -62,7 +60,12 @@ e.constraints = {
     "time>=": "2016-01-26T09:45Z",
     "time<=": "2016-12-07T04:40Z",
 }
+
+print ("setting variables done")
+
 ```
+
+Check the full URL
 
 ```python
 # Print the URL - check
@@ -70,8 +73,11 @@ url = e.get_download_url()
 print(url)
 ```
 
-## Import it into a pandas 
-```
+## Import into Python Pandas
+
+Import the dataset into a pandas dataframe. Import the csvp response with the `.to_pandas` method.
+
+```python
 # Convert URL to pandas dataframe
 df = e.to_pandas(
     index_col="time (UTC)",
@@ -80,6 +86,39 @@ df = e.to_pandas(
 
 df.head()
 ```
+
+Check the dataframe and start using it into your pythin environment
+
+```python
+print(df.info())
+```
+
+```python
+print (df.columns)
+```
+
+```python
+%matplotlib inline
+
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+
+fig, ax = plt.subplots(figsize=(17, 10))
+cs = ax.scatter(
+    x=df["longitude (degrees_east)"],
+    y=df["latitude (degrees_north)"],
+    s=15,
+    c=df["PN (micromoles N per liter of water (um/L))"],
+    marker="o",
+    edgecolor="none"
+)
+
+cbar = fig.colorbar(cs, orientation="vertical", extend="both")
+cbar.ax.set_ylabel("PN (micromoles N per liter of water (um/L))")
+ax.set_ylabel("latitude");
+ax.set_xlabel("longitude");
+```
+
 
 
 
@@ -117,4 +156,6 @@ scatter3D(x = glider$longitude , y = glider$latitude , z = -glider$depth, colvar
 * erddapy quick intro: https://ioos.github.io/erddapy/00-quick_intro-output.html
 * erddapy use with gliders rich signel: 
 * notebook community: https://notebook.community/pyoceans/erddapy/notebooks/quick_intro 
+* Awesome erddap: global" searches of all erddap servers
+* unpacking the matplotlib function: https://towardsdatascience.com/clearing-the-confusion-once-and-for-all-fig-ax-plt-subplots-b122bb7783ca 
 
