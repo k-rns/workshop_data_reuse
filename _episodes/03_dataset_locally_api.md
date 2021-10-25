@@ -1,16 +1,16 @@
 ---
-title: "Downloading data using an ERDDAP URL"
+title: "Data requests using an ERDDAP URL"
 teaching: 20
 exercises: 0
 questions:
 - "How do a download an ERDDAP table dataset to my local computer using python?"
 objectives:
 - "Creating the ERDDAP download URL"
-- "Downloading an ERRDAP table dataset using the urllib library"
+- "Downloading an ERRDAP table dataset with Python"
 keypoints:
-- "Tabledap request URLs are in the form: server/tabledap/datasetID.fileType{?query}"
+- "Tabledap request URLs are in the form: server/protocol/datasetID.fileType{?query}"
 - "urllib library works with https protocols"
-- ""
+
 ---
 
 
@@ -54,14 +54,13 @@ Thus, the query is often a comma-separated list of desired variable names, follo
 
 
 # Building the URL of a dataset
-Example dataset that we will be using: https://www.bco-dmo.org/dataset/817214 
-Erddap table: https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_815732.htmlTable 
+Example dataset that we will be using: https://www.bco-dmo.org/dataset/815732
 
-**Tabledap request URLs must be in the form** 
-https://coastwatch.pfeg.noaa.gov/erddap/tabledap/*[datasetID](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#datasetID)*.*[fileType](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#fileType)*{?*[query](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#query)*}
 
-### 1. Server you want to download data
-https://erddap.bco-dmo.org/
+
+
+### 1. ERDDAP server you want to get data
+https://erddap.bco-dmo.org/erddap
 
 ### 2. Protocol
 
@@ -118,15 +117,39 @@ IMPORTANT NOTE: The actual extension of the resulting file may be slightly diffe
 
 
 
-## 4. Subset the data
+## 4. Data request
 
+The data request in the URL starts with `?`
 
+Then add the variables of interest: all variables
+
+* Cruise_ID
+* Cast_ID
+* Station_ID
+* UTC_Date
+* UTC_Time
+* time
+* latitude
+* longitude
+* depth
+* Strain_Gauge_Pressure
+* Conductivity
+* Salinity
+* Temperature
+* Potential_Temp
+* Density
+* Sigma_theta
+* Oxygen_MLL
+* Oxygen_pcnt
+* PAR_Irradiance
+* ISUS
+* flag
 
 
 
 NOTE: Just generate the URL: 
 
-https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_712367.htmlTable?tank%2CpH%2CTemp%2Cgenotype%2CJuly_mass%2CAugust_mass%2CSeptember_mass
+Erddap table: https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_815732.csv?Cruise_ID,Cast_ID,Station_ID,UTC_Date,UTC_Time,time,latitude,longitude,depth,Strain_Gauge_Pressure,Conductivity,Salinity,Temperature,Potential_Temp,Density,Sigma_theta,Oxygen_mLL,Oxygen_pcnt,PAR_Irradiance,ISUS,flag
 
 
 
@@ -139,7 +162,7 @@ Download/import the **urllib package** into the Python environment  to work with
 import urllib.request
 
 #define the url you want to download
-download_url = https://erddap.bco-dmo.org/erddap/tabledapbcodmo_dataset_712367.csvp?tank%2CpH%2CTemp%2Cgenotype%2CJuly_mass%2CAugust_mass%2CSeptember_mass 
+download_url = https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_815732.csv?Cruise_ID,Cast_ID,Station_ID,UTC_Date,UTC_Time,time,latitude,longitude,depth,Strain_Gauge_Pressure,Conductivity,Salinity,Temperature,Potential_Temp,Density,Sigma_theta,Oxygen_mLL,Oxygen_pcnt,PAR_Irradiance,ISUS,flag
     
 # Define where you want to save the file on your computer
 path_to_save = 
@@ -148,24 +171,10 @@ path_to_save =
 urllib.request.urlretrieve(url, "path to save")
 ```
 
-Import the **Pandas library** to work with tables in your Python environment.
-
-
-```Python
-# Import the downloaded .csv data into jupyter notebooks with the package Pandas
-import pandas as pd
-```
-
-```python
-# Examine data structure		
-```
-
-
 
 ## Resources
 
-https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_817214.htmlTable?Cruise_ID%2Clatitude%2Clongitude%2CDate_Time_PST%2CTemperature%2CSalinity%2CChlorophyll%2Ctime
-Download your dataset to your local machine in the file type you need.
+* NOAA satellite training: https://coastwatch.pfeg.noaa.gov/projects/erddap/
+* Work with satellite data in python (extract data from erddap): https://coastwatch.gitbook.io/satellite-course/tutorials/python-tutorial/1.-how-to-work-with-satellite-data-in-python 
 
-Example repo: https://coastwatch.gitbook.io/satellite-course/tutorials/python-tutorial/1.-how-to-work-with-satellite-data-in-python 
-
+* pangeo data access (Rich Signell): http://gallery.pangeo.io/repos/rsignell-usgs/esip-gallery/05_ERDDAP_access.html 

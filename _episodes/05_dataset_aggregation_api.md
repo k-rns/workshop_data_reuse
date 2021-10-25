@@ -16,18 +16,6 @@ keypoints:
 
 
 
-# Work directly with your dataset in python 
-
-Use the library erddapy to work directly with your dataset in python. 
-
-Alternative in R: rerrdap
-
-Example repo: https://github.com/rsignell-usgs/notebook/blob/master/ERDDAP/ERDDAPY_Intro_OOI.ipynb
-
-```python
-# Install the package erddapy 
-```
-
 
 
 # Aggregating data
@@ -40,9 +28,26 @@ Work with data from different servers & different between tabledap and griddap
 * download an ooi dataset
 * put everything on a map.
 
-FIXME
 
-{% include links.md %}
+
+
+
+
+
+Datasets to aggregate, the variable to use is temperature data. 
+
+Goni - BCO-DMO: https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_817952.graph?longitude%2Clatitude%2CTemperature&time%3E=2017-01-10T00%3A00Z&time%3C=2017-01-17T00%3A00Z&.draw=markers&.marker=5%7C5&.color=0x000000&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff
+
+OOI: find data about this mooring:  https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-ce01issm-rid16-03-ctdbpc000.graph?longitude%2Clatitude%2Cz&time%3E=2017-01-10T00%3A00%3A00Z&time%3C=2017-01-10T00%3A00%3A00Z&longitude%3E=-124.563&longitude%3C=-123.563&latitude%3E=44.136&latitude%3C=45.136&.draw=markers&.marker=5%7C5&.color=0xFF00FF&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff
+
+Satellite data NASA? sea surface temperature : **GHRSST Global 1-km Sea Surface Temperature (G1SST), Global, 0.01 Degree, 2010-
+2017, Daily**
+
+https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplG1SST.graph?SST%5B(2017-09-13T00:00:00Z)%5D%5B(-79.995):(79.995)%5D%5B(-179.995):(179.995)%5D&.draw=surface&.vars=longitude%7Clatitude%7CSST&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff
+
+boundaries 
+
+
 
 
 
