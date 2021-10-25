@@ -78,13 +78,11 @@ Many organizations (including NOAA, NASA, and USGS) run ERDDAP servers  to serve
 
 
 
-BGC-Argo: Do they have an erddap server?  
+## Protocols 
 
-* Domain: 
-* Description
-* Server
+gridded data: griddap
 
-
+tabular data: tabledap
 
 ## Exercise:
 

@@ -129,6 +129,18 @@ You have to use a command line (Anaconda Prompt(Windows)  Terminal(Mac/Linux) to
 
 
 
+NOTE: Multiple users have installed their environment with the steps above, but still got the following error when testing their installs:
+
+![image-20211020121824355](assets/img/install_troubleshooting.png)
+
+This issue got resolved when explicitly installing jupyter in the "erddap" environment. In order to do so, close your notebook, go to the anaconda prompt and check that your erddap environment is active (i.e (erddap) will be at the start of your line) and install Jupyter with the following command:
+
+ ```conda install -c anaconda jupyter```
+
+Check your installs again with the steps above. You should not get an error anymore.
+
+
+
 ###  Jupyter notebook basics
 
 ##### Open Jupyter notebook 
