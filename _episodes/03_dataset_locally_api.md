@@ -64,6 +64,12 @@ https://erddap.bco-dmo.org/erddap
 
 ### 2. Protocol
 
+Protocols are the standards which specify how to request data.  Different protocols are appropriate for different types of data and for different client applications.
+
+**griddap** lets you request a data subset, graph, or map from a  gridded dataset (for example, sea surface temperature data from a satellite), via a specially formed URL
+
+ets you request a data subset, a graph, or a map from  a tabular dataset (for example, buoy data), via a specially formed URL
+
 tabledap / griddap
 
 ### 3. Choose your file type
