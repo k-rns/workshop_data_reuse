@@ -10,9 +10,9 @@ questions:
 objectives:
 - "Understand all the different factors for reusing online data with ERDDAP"
 keypoints:
-- "Open data is documentation and sharing research data openly for re-use:"
-- "Reusing data from another source can be challenging"
-- "ERDDAP provides the ability to download data in common file formats :"
+- "Searching an ERDDAP data catalog can be done using a web page"
+- "Data can be downloaded in different file formats"
+- "Constraints can be added to a dataset search"
 ---
 {% include links.md %}
 
@@ -107,4 +107,3 @@ https://coastwatch.gitbook.io/satellite-course/
 
 https://dale-robinson.gitbook.io/coastwatch-satellite-course-may-2021/
 
-## 
