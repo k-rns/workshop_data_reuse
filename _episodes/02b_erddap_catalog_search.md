@@ -1,7 +1,7 @@
 ---
 title: "Finding data in the ERDDAP data catalog"
-teaching: 10
-exercises: 0
+teaching: 15
+exercises: 15
 questions:
 - "How do I search for data in ERDDAP?"
 - "What information does a dataset hold?"
