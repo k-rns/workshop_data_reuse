@@ -1,11 +1,12 @@
 ---
-title: "Exploring the ERDDAP data catalog"
+title: "Finding data in the ERDDAP data catalog"
 teaching: 10
 exercises: 0
 questions:
-- "What is open data?"
-- "What is ERDDAP?"
-- "Why is ERDDAP important for data reuse?"
+- "How do I search for data in ERDDAP?"
+- "What information does a dataset hold?"
+- "How can I subset a dataset?"
+- "How do I make a graph in ERDDAP?"
 objectives:
 - "Understand all the different factors for reusing online data with ERDDAP"
 keypoints:
@@ -17,7 +18,13 @@ keypoints:
 
 # Exploring an ERDDAP data catalog
 
-There are many ERDDAP servers to chose from. For this example, we will use the ERDDAP operated by BCO-DMO: ```https://erddap.bco-dmo.org/erddap/index.html ```
+In the chapter before we have seen that there are many ERDDAP servers to chose from. In this chapter we will dive a bit deeper in how to search for data in an ERDDAP catalog. 
+
+## Finding data
+
+For this example, we will use the ERDDAP operated by BCO-DMO:  go to:
+
+[https://erddap.bco-dmo.org/erddap/index.html](https://erddap.bco-dmo.org/erddap/index.html)
 
 To view all the available datasets on this erddap server click "View a List of all 1095 datasets"
 
@@ -25,44 +32,55 @@ To view all the available datasets on this erddap server click "View a List of a
 
 
 
-# Gather information about a dataset
+Let's now search the database for specific data. Let's search for CTD data in the Ross Sea from 2017. Type in search box: ctd "Ross Sea" 2017. This is a full text search, just like Google, use white spaces in between words and double quotes "" around phrases
+
+![image-20211026185806242](C:\Users\ksoenen\AppData\Roaming\Typora\typora-user-images\image-20211026185806242.png)
+
+There are a couple of datasets that are popping up in this search, but let's choose the one with DatasetID: bcodmo_dataset_783911. 
+
+## Dataset information
 
 Within the search results you have access to information about each dataset to help you decide with which dataset is useful for your application.  
 
-* Add “ostia” in the search box (e.g. sst global ostia) and click the “Search’ button.
+![image-20211026190530727](C:\Users\ksoenen\AppData\Roaming\Typora\typora-user-images\image-20211026190530727.png)
 
-* In the results you should several datasets, including the one displayed below.
 
-![image-20211026152204792](C:\Users\ksoenen\AppData\Roaming\Typora\typora-user-images\image-20211026152204792.png)
 
-* The listing (pictured above) gives access to a lot of information about the dataset. In a browser, try the following:
-  * Mouse over the question mark `?` under `"Summary"` to get an overview of the dataset.
-  * Click `"background"` to get more complete information from the data provider about the dataset. Now go back to the search results page.
-  * Click the `"M"` under `"ISO,Metadata"` to see all of the dataset metadata. A lot of information is displayed. Some important fields are:
-    * `"geospatial_lat_min"`, `"geospatial_lat_max"`, `"geospatial_lon_min"`, and `"geospatial_lon_max"` for the spatial coverage
-    * `"geospatial_lat_resolution"` and `"geospatial_lon_resolution"` for the size of each pixel
-    * `"references"` for citing the dataset in publications
-    * `"license"` for restrictions on using the data
-    * `"acknowledgement"` often used to describe how to acknowledge use of the dataset
-    * `"creator_name"` for the entity that created the dataset
+The listing (pictured above) gives access to a lot of information about the dataset. In a browser, try the following:
+* Mouse over the question mark `?` under **Summary** to get an overview of the dataset.
+* Click **"Background info"** to get more complete information from the data provider about the dataset. Now go back to the search results page.
+* Click the `"M"` under **"ISO,Metadata"** to see all of the dataset metadata. A lot of information is displayed. Some important fields are:
+  * `"geospatial_lat_min"`, `"geospatial_lat_max"`, `"geospatial_lon_min"`, and `"geospatial_lon_max"` for the spatial coverage
+  * `"references"` for citing the dataset in publications
+  * `"license"` for restrictions on using the data
+  * `"acknowledgement"` often used to describe how to acknowledge use of the dataset
+  * time: ERDDAP standardizes the dates+times in the results.  Data from other data servers is hard to compare    because the dates+times often are expressed in different formats    (for example, "Jan 2, 2018", 02-JAN-2018, 1/2/18, 2/1/18,    2018-01-02, "days since Jan 1, 1900").  For string times, ERDDAP always uses the ISO 8601:2004(E) standard format,    for example, 2018-01-02T00:00:00Z.  For numeric times, ERDDAP always uses "seconds since 1970-01-01T00:00:00Z".  ERDDAP always uses the Zulu (UTC, GMT) time zone to remove the difficulties    of working with different time zones and standard time versus daylight saving time.
 
-These standardised variables is important for the dataset to be able to be "read" by other end-users and machines.
+These standardised variables are important for the dataset to be able to be "read" by other end-users and machines.
 
 For example Google dataset search:
 
 * open google dataset search: https://datasetsearch.research.google.com/
 
-* search for the dataset id of the dataset above: bcodmo_dataset_3358
+* search for the dataset id of the dataset above: bcodmo_dataset_783911
 
   ![image-20211026155703527](C:\Users\ksoenen\AppData\Roaming\Typora\typora-user-images\image-20211026155703527.png)
 
+## Subsetting data
 
+Click on the data button. Here is the link to the dataset in erddap: https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_783911.html  
 
+![image-20211026193729341](C:\Users\ksoenen\AppData\Roaming\Typora\typora-user-images\image-20211026193729341.png)
 
+### Set the file type
 
+### Download the data "Submit"
 
+## Create a graph
 
+ERRDAP also provides a graph function for your datasets, but I will not go into this more in detail. 
 
+![image-20211026200843217](C:\Users\ksoenen\AppData\Roaming\Typora\typora-user-images\image-20211026200843217.png)
 
 ## Exercise:
 
@@ -73,15 +91,20 @@ Search for a dataset on their specific servers via the web application. Inspect 
 
 How does a data package look? Metadata structure
 
-\- **Accessing and visualizing data through ERDDAP**
 
-1. ERDDAP Introduction
-2. Finding datasets on ERDDAP, Gather information about a dataset
-3. Visualization and download data
-4. Automating ERDDAP requests
-5. Timeseries and Hovmoller diagrams
-6. Mapping Hurricane Jose with winds
-7. Tabular Datasets, BGC-Argo data
+
+Exercises from other 
+
+[Tabular Datasets with BGC-Argo data](https://dale-robinson.gitbook.io/coastwatch-satellite-course-may-2021/tutorials/erddap/tabular-datasets-bgc-argo-data)
 
 
 
+# Resources
+
+https://datalab.marine.rutgers.edu/2020/11/introduction-to-python-argo-float-data/ 
+
+https://coastwatch.gitbook.io/satellite-course/
+
+https://dale-robinson.gitbook.io/coastwatch-satellite-course-may-2021/
+
+## 
