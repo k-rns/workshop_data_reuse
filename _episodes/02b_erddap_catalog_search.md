@@ -28,13 +28,13 @@ For this example, we will use the ERDDAP operated by BCO-DMO:  go to:
 
 To view all the available datasets on this erddap server click "View a List of all 1095 datasets"
 
-![image-20211026150350923](C:\Users\ksoenen\AppData\Roaming\Typora\typora-user-images\image-20211026150350923.png)
+![image-20211026150350923](../assets/img/image-20211026150350923.png)
 
 
 
 Let's now search the database for specific data. Let's search for CTD data in the Ross Sea from 2017. Type in search box: ctd "Ross Sea" 2017. This is a full text search, just like Google, use white spaces in between words and double quotes "" around phrases
 
-![image-20211026185806242](C:\Users\ksoenen\AppData\Roaming\Typora\typora-user-images\image-20211026185806242.png)
+![image-20211026185806242](../assets/img/image-20211026185806242.png)
 
 There are a couple of datasets that are popping up in this search, but let's choose the one with DatasetID: bcodmo_dataset_783911. 
 
@@ -42,7 +42,7 @@ There are a couple of datasets that are popping up in this search, but let's cho
 
 Within the search results you have access to information about each dataset to help you decide with which dataset is useful for your application.  
 
-![image-20211026190530727](C:\Users\ksoenen\AppData\Roaming\Typora\typora-user-images\image-20211026190530727.png)
+![image-20211026190530727](../assets/img/image-20211026190530727.png)
 
 
 
@@ -64,13 +64,13 @@ For example Google dataset search:
 
 * search for the dataset id of the dataset above: bcodmo_dataset_783911
 
-  ![image-20211026155703527](C:\Users\ksoenen\AppData\Roaming\Typora\typora-user-images\image-20211026155703527.png)
+  ![image-20211026155703527](../assets/img/image-20211026155703527.png)
 
 ## Subsetting data
 
 Click on the data button. Here is the link to the dataset in erddap: https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_783911.html  
 
-![image-20211026193729341](C:\Users\ksoenen\AppData\Roaming\Typora\typora-user-images\image-20211026193729341.png)
+![image-20211026193729341](../assets/img/image-20211026193729341.png)
 
 ### Set the file type
 
@@ -80,7 +80,7 @@ Click on the data button. Here is the link to the dataset in erddap: https://erd
 
 ERRDAP also provides a graph function for your datasets, but I will not go into this more in detail. 
 
-![image-20211026200843217](C:\Users\ksoenen\AppData\Roaming\Typora\typora-user-images\image-20211026200843217.png)
+![image-20211026200843217](../assets/img/image-20211026200843217.png)
 
 ## Exercise:
 
