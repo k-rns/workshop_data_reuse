@@ -1,7 +1,7 @@
 ---
 title: "Aggregating multiple datasets"
-teaching: 20
-exercises: 25
+teaching: 10
+exercises: 30
 questions:
 - "How can I work with different datasets?"
 objectives:
@@ -14,11 +14,126 @@ keypoints:
 - "You can asses your data package in Python"
 ---
 
+# Aggregating datasets
+
+```python
+from erddapy import ERDDAP
+
+# ooi constructor:
+
+e = ERDDAP(
+    server= " https://erddap.dataexplorer.oceanobservatories.org/erddap/",
+    protocol="tabledap",
+    response="csv",
+)
+
+e.dataset_id = "ooi-ce01issm-rid16-03-ctdbpc000"
+e.variables = [
+    "longitude",
+    "latitude",
+    "time",
+    "sea_water_temperature"
+]
+e.constraints = {
+    "time>=": "2017-01-13T00:00:00Z",
+    "time<=": "2017-01-16T23:59:59Z",}
+
+
+# Print the URL - check
+url = e.get_download_url()
+print(url)
+
+# Convert URL to pandas dataframe
+df_ooi = e.to_pandas(
+    
+    parse_dates=True,
+).dropna()
+
+df_ooi.head()
+
+
+```
+
+```python
+# bco-dmo constructor
+url_bcodmo = "https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_817952.graph?longitude%2Clatitude%2CTemperature&time%3E=2017-01-10T00%3A00Z&time%3C=2017-01-17T00%3A00Z&.draw=markers&.marker=5%7C5&.color=0x000000&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff" 
+
+
+e = ERDDAP(
+    server= "https://erddap.bco-dmo.org/erddap/",
+    protocol="tabledap",
+    response="csv",
+)
+
+e.dataset_id = "bcodmo_dataset_817952"
+e.variables = [
+    "longitude",
+    "latitude",
+    "time",
+    "Temperature"
+]
+e.constraints = {
+    "time>=": "2017-01-13T00:00:00Z",
+    "time<=": "2017-01-16T23:59:59Z",}
+
+
+# Print the URL - check
+url = e.get_download_url()
+print(url)
+# Convert URL to pandas dataframe
+df_bcodmo = e.to_pandas(
+    
+    parse_dates=True,
+).dropna()
+
+df_bcodmo.head()
+
+# index_col="time (UTC)",
+
+print (df_bcodmo.columns)
+
+df_bcodmo.rename(columns={df_bcodmo.columns.values[3]: 'temperature'}, inplace=True)
+print (df_bcodmo.columns)
+
+```
+
+## plotting the data
+
+```python
+%matplotlib inline
+
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(12,5)) 
+plt.plot(df_bcodmo["time (UTC)"],df_bcodmo['temperature'],label='bcodmo',c='red',marker='.',linestyle='-') 
+plt.plot(df_ooi["time (UTC)"],df_ooi["sea_water_temperature (degree_Celsius)"],label='OOI',c='blue',marker='.',linestyle='-') 
+plt.ylabel('degrees celsius')
+plt.legend()
+# plt.yticks(rotation=90)
+
+
+fig, (ax1, ax2) = plt.subplots(2)
+fig.suptitle('Vertically stacked subplots')
+ax1.plot(df_bcodmo["time (UTC)"],df_bcodmo['temperature'],label='bcodmo',c='red',marker='.',linestyle='-')
+ax2.plot(df_ooi["time (UTC)"],df_ooi["sea_water_temperature (degree_Celsius)"],label='OOI',c='blue',marker='.',linestyle='-')
+ax1.set(ylabel='degrees celsius')
+ax2.set(ylabel='degrees celsius')
+```
 
 
 
+# Working with gridded data:
 
-# Aggregating data
+Example from: https://coastwatch.gitbook.io/satellite-course/tutorials/python-tutorial/1.-how-to-work-with-satellite-data-in-python 
+
+Satellite data NASA? sea surface temperature : **GHRSST Global 1-km Sea Surface Temperature (G1SST), Global, 0.01 Degree, 2010-
+2017, Daily**
+
+https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplG1SST.graph?SST%5B(2017-09-13T00:00:00Z)%5D%5B(-79.995):(79.995)%5D%5B(-179.995):(179.995)%5D&.draw=surface&.vars=longitude%7Clatitude%7CSST&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff
+
+
+
+# Exercise: Aggregating data
 
 Work with data from different servers & different between tabledap and griddap
 
@@ -29,34 +144,6 @@ Work with data from different servers & different between tabledap and griddap
 * put everything on a map.
 
 
-
-
-
-
-
-Datasets to aggregate, the variable to use is temperature data. 
-
-Goni - BCO-DMO: https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_817952.graph?longitude%2Clatitude%2CTemperature&time%3E=2017-01-10T00%3A00Z&time%3C=2017-01-17T00%3A00Z&.draw=markers&.marker=5%7C5&.color=0x000000&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff
-
-OOI: find data about this mooring:  https://erddap.dataexplorer.oceanobservatories.org/erddap/tabledap/ooi-ce01issm-rid16-03-ctdbpc000.graph?longitude%2Clatitude%2Cz&time%3E=2017-01-10T00%3A00%3A00Z&time%3C=2017-01-10T00%3A00%3A00Z&longitude%3E=-124.563&longitude%3C=-123.563&latitude%3E=44.136&latitude%3C=45.136&.draw=markers&.marker=5%7C5&.color=0xFF00FF&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff
-
-Satellite data NASA? sea surface temperature : **GHRSST Global 1-km Sea Surface Temperature (G1SST), Global, 0.01 Degree, 2010-
-2017, Daily**
-
-https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplG1SST.graph?SST%5B(2017-09-13T00:00:00Z)%5D%5B(-79.995):(79.995)%5D%5B(-179.995):(179.995)%5D&.draw=surface&.vars=longitude%7Clatitude%7CSST&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff
-
-boundaries 
-
-
-
-
-
-# Exercise
-
-* 1 dataset
-* multiple datasets
-
-# ERDDAP Exercise
 
 From this repo: https://github.com/CoastWatch-PolarWatch/EDMW_2021_python_code number 1
 
@@ -73,39 +160,5 @@ Describe the exercise: i.e "In this exercise, you will use Python to download da
 
 
 
-About the dataset used in this exercise
 
-Install the correct python modules
-
-
-
-## What to do with the ERDDAP file
-
-1. Access data and metadata from erddap / get information about a dataset from erddap
-
-   1. We will use the xarray `open_dataset` function to access data and metadata from ERDDAP. 
-
-      Here we describe how to create the url for the `open_dataset` function and demonstrate a function to generate the ERDDAP url.
-
-      Open a pointer to an ERDDAP dataset, using the xarray `open_dataset` function
-
-      > xr.open_dataset('full_url_to_erddap_dataset')
-
-      Where, the `full_url_to_erddap_dataset` is the base url to the ERDDAP you are using and the ERDDAP dataset id. So, for our dataset:
-
-      - base_URL = 'https://coastwatch.pfeg.noaa.gov/erddap/griddap'
-      - dataset_id = 'nesdisGeoPolarSSTN5SQNRT'
-      - full_URL = 'https://coastwatch.pfeg.noaa.gov/erddap/griddap/nesdisGeoPolarSSTN5SQNRT'
-
-2. Examine the metadata
-
-   1. coordinate variables and dimensions
-   2. look at the data variables
-   3. Examine Global attributes: global attributes provide information about a dataset as a whole. 
-
-3. Download data from erddap
-
-   1. Subsetting data
-
-4. Visualizing data
 

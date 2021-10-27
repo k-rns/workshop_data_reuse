@@ -18,7 +18,7 @@ keypoints:
 
 In the previous lesson, we downloaded our dataset file to our local machine. Now we will not download it to your local machine, but use in in your python environment directly. 
 
-Erddapy is a package that helps create the ERDDAP URLs. You can create virtually any request like, searching for datasets, acquiring metadata, downloading data, etc.
+Erddapy is a package that  takes advantage of ERDDAP's RESTful web services and creates the ERDDAP URL for any request, like searching for datasets, acquiring metadata, downloading the data, etc.You can create virtually any request like, searching for datasets, acquiring metadata, downloading data, etc.
 
 
 
@@ -73,9 +73,9 @@ url = e.get_download_url()
 print(url)
 ```
 
-## Import into Python Pandas
+## Pull into Python Pandas
 
-Import the dataset into a pandas dataframe. Import the csvp response with the `.to_pandas` method.
+Pull the dataset into a pandas dataframe. Import the csvp response with the `.to_pandas` method.
 
 ```python
 # Convert URL to pandas dataframe
@@ -121,6 +121,17 @@ ax.set_xlabel("longitude");
 
 
 
+## Searching servers
+
+```
+from erddapy import servers
+{k: v.url for k, v in servers.items()}
+```
+
+
+
+# Searching datasets
+
 
 
 
@@ -158,4 +169,5 @@ scatter3D(x = glider$longitude , y = glider$latitude , z = -glider$depth, colvar
 * notebook community: https://notebook.community/pyoceans/erddapy/notebooks/quick_intro 
 * Awesome erddap: global" searches of all erddap servers
 * unpacking the matplotlib function: https://towardsdatascience.com/clearing-the-confusion-once-and-for-all-fig-ax-plt-subplots-b122bb7783ca 
+* ERDDAP class API: https://ioos.github.io/erddapy/erddapy.html
 
