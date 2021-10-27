@@ -1,9 +1,11 @@
 ---
 title: "Data requests using an ERDDAP URL"
 teaching: 20
-exercises: 0
+exercises: 10
 questions:
-- "How do a download an ERDDAP table dataset to my local computer using python?"
+- "What is ERDDAP REST API?"
+- "How does an ERDDAP URL endpoint look like?"
+- "How can I access data request?"
 objectives:
 - "Creating the ERDDAP download URL"
 - "Downloading an ERRDAP table dataset with Python"
@@ -13,7 +15,7 @@ keypoints:
 
 ---
 
-
+{% include links.md %}
 
 We have just seen that we can search erddap for datsets. The main takeaways were:
 
@@ -27,9 +29,27 @@ In the next chapter, we'll see that an ERDDAP can not only be used in the web in
 
 # The ERDDAP REST API Service
 
-What is an API? API is the acronym for Application Programming Interface, which is a  software intermediary that allows two applications to talk to each  other. Each time you use an app like Facebook, send an instant message,  or check the weather on your phone, you’re using an API.
+## What is an API?
+Shoutout to [API workshop](https://adyork.github.io/intro-to-apis-taxamatch/01-what-is-an-api/index.html) from Amber York: 
 
-ERDDAP REST API Service = Requesting data using a URL. All information about every ERDAPP request is contained in the URL of each request, which  makes it easy to automate searching for and using data in other  applications. Proficient users can build their own custom interfaces.  
+API stands for **Application Programming Interface**.  APIs are the glue that hold the technology universe together.  They are a communication tool that can be used to pass information to and from different kinds of devices and hardware through requests and responses.  Let's look at a restaurant concept example.
+
+![restaurant as an API](https://adyork.github.io/intro-to-apis-taxamatch/fig/resturant_api.png)
+
+> ### Concept: Restaurant as an API
+> * You request an item listed the menu.  
+> * Your order is received by the kitchen.
+> * The kitchen performs all kinds of operations needed to make your food.
+> * Then then you get a response.  Your food is either delivered to your table or you get no food if they couldn't make your request. They can't make your food if you ordered something that isn't on the menu, you didn't ask for it correctly, or if equipment failure prevented them from making your requested item.
+>
+> API requests have to be made in specific ways so **referring to Documentation** is very important.
+> {: .callout}
+
+In this workshop we  are focussing on the ERDDAP REST API. It is a medium for two computers to communicate over HTTP  (Hypertext Transfer Protocol), in the same way clients and servers  communicate.
+
+## ERDDAP request URLs
+
+Requesting data from ERDDAP can be done using a URL. All information about every ERDAPP request is contained in the URL of each request, which  makes it easy to automate searching for and using data in other  applications. 
 
 **Tabledap request URLs must be in the form** 
 
@@ -138,28 +158,48 @@ Then add the variables of interest: all variables
 * latitude
 * longitude
 * depth
-* Strain_Gauge_Pressure
 * Conductivity
 * Salinity
 * Temperature
-* Potential_Temp
-* Density
-* Sigma_theta
-* Oxygen_MLL
-* Oxygen_pcnt
-* PAR_Irradiance
-* ISUS
-* flag
 
+### Exercise
 
+Change the URL so you get data where temperature is only between 
+
+Date is 
 
 NOTE: Just generate the URL: 
 
 Erddap table: https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_815732.csv?Cruise_ID,Cast_ID,Station_ID,UTC_Date,UTC_Time,time,latitude,longitude,depth,Strain_Gauge_Pressure,Conductivity,Salinity,Temperature,Potential_Temp,Density,Sigma_theta,Oxygen_mLL,Oxygen_pcnt,PAR_Irradiance,ISUS,flag
 
+# Access 
 
+## Webbrowser 
 
-# Download the dataset with Python
+What happens when you copy and past that URL into a web browser
+
+![image-20211026211630918](C:\Users\ksoenen\AppData\Roaming\Typora\typora-user-images\image-20211026211630918.png)
+
+## Command line
+
+You can use `curl` on command line to make requests and get responses.
+
+~~~bash
+$ curl https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_815732.csv?Cruise_ID,Cast_ID,Station_ID,UTC_Date,UTC_Time,time,latitude,longitude,depth,Strain_Gauge_Pressure,Conductivity,Salinity,Temperature,Potential_Temp,Density,Sigma_theta,Oxygen_mLL,Oxygen_pcnt,PAR_Irradiance,ISUS,flag
+~~~
+Output:
+
+## Download the dataset with Python
+
+In the previous chapter we saw that we could download a dataset from erddap pushing a button. 
+
+Live coding demo:
+
+* Open anaconda prompt or terminal
+* Activate erddap environment
+* Go to the location where you want your notebook to be
+* jupyter notebook in command line
+* go to new -> Python 3
 
 Download/import the **urllib package** into the Python environment  to work with url's in your environment:  [Python Documentation](https://docs.python.org/3/library/urllib.html)
 
@@ -168,14 +208,17 @@ Download/import the **urllib package** into the Python environment  to work with
 import urllib.request
 
 #define the url you want to download
-download_url = https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_815732.csv?Cruise_ID,Cast_ID,Station_ID,UTC_Date,UTC_Time,time,latitude,longitude,depth,Strain_Gauge_Pressure,Conductivity,Salinity,Temperature,Potential_Temp,Density,Sigma_theta,Oxygen_mLL,Oxygen_pcnt,PAR_Irradiance,ISUS,flag
+download_url = "https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_815732.csv?Cruise_ID,Cast_ID,Station_ID,UTC_Date,UTC_Time,time,latitude,longitude,depth,Strain_Gauge_Pressure,Conductivity,Salinity,Temperature,Potential_Temp,Density,Sigma_theta,Oxygen_mLL,Oxygen_pcnt,PAR_Irradiance,ISUS,flag"
     
 # Define where you want to save the file on your computer
-path_to_save = 
+name_to_save = "bcodmo_dataset_815732.csv"
 
 # download the dataset   
-urllib.request.urlretrieve(url, "path to save")
+urllib.request.urlretrieve(download_url, name_to_save)
 ```
+
+
+
 
 
 ## Resources
