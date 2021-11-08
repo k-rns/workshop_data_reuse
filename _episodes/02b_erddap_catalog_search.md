@@ -84,18 +84,16 @@ ERRDAP also provides a graph function for your datasets, but I will not go into 
 
 ## Exercise:
 
-Search for a dataset on their specific servers via the web application. Inspect the metadata, can you understand the dataset enought to be able to use it? : 
+Searching the BGC-Argo data:
 
-* ERDDAP metadata
-* Searching erddap
+* Server: https://polarwatch.noaa.gov/erddap/
+* search “Biogeochemical-Argo” 
+* Questions: 
+  * how many datasets are being returned?
+  * What is the difference between the datasets? 
+  * What is the time range the datasets have?
 
-How does a data package look? Metadata structure
-
-
-
-Exercises from other 
-
-[Tabular Datasets with BGC-Argo data](https://dale-robinson.gitbook.io/coastwatch-satellite-course-may-2021/tutorials/erddap/tabular-datasets-bgc-argo-data)
+Exercise from:  [Tabular Datasets with BGC-Argo data](https://dale-robinson.gitbook.io/coastwatch-satellite-course-may-2021/tutorials/erddap/tabular-datasets-bgc-argo-data)
 
 
 
