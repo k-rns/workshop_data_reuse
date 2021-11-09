@@ -16,6 +16,33 @@ keypoints:
 
 # Aggregating datasets
 
+Exercise: We want to plot surface temperature of different datasets with each other. 
+
+Note; We will be importing datasets from different servers, bear in mind that the granularity (time interval, sensor types) are different and needs to be taken into account when actually comparing these dataset. 
+
+* Location: Location: Oregon Coast. 
+
+* Date range: [2017-01-13 till 2017-01-16], UTC time. 
+
+* Variable: Surface temperature
+
+
+
+```python
+#Import erddap package into 
+from erddapy import ERDDAP
+```
+
+
+
+## OOI temperature dataset - Oregon Coast
+
+Import an OOI dataset. Background on the dataset we are importing [here](https://ooinet.oceanobservatories.org/data_access/?search=CE01ISSM-RID16-03-CTDBPC000) and [here](https://sensors.ioos.us/#metadata/103705/station) :
+
+* Coastal endurance Array
+* Platform: Oregon Inshore Surface Monitoring
+* Instrument CTD. 
+
 ```python
 from erddapy import ERDDAP
 
@@ -37,22 +64,29 @@ e.variables = [
 e.constraints = {
     "time>=": "2017-01-13T00:00:00Z",
     "time<=": "2017-01-16T23:59:59Z",}
+```
 
-
+Check the URL
+```python
 # Print the URL - check
 url = e.get_download_url()
 print(url)
+```
 
+Import the dataset into the pandas dataframe and check the lay-out
+```python
 # Convert URL to pandas dataframe
-df_ooi = e.to_pandas(
-    
+df_ooi = e.to_pandas( 
     parse_dates=True,
 ).dropna()
 
 df_ooi.head()
-
-
 ```
+
+
+
+## BCO-DMO temperature dataset - Oregon Coast
+
 
 ```python
 # bco-dmo constructor
@@ -86,6 +120,7 @@ df_bcodmo = e.to_pandas(
     parse_dates=True,
 ).dropna()
 
+# print the dataframe to check what data is in there specifically. 
 df_bcodmo.head()
 
 # index_col="time (UTC)",
@@ -96,6 +131,22 @@ df_bcodmo.rename(columns={df_bcodmo.columns.values[3]: 'temperature'}, inplace=T
 print (df_bcodmo.columns)
 
 ```
+Check your dataset in Pandas
+```python
+# print the dataframe to check what data is in there specifically. 
+df_bcodmo.head()
+
+# index_col="time (UTC)",
+print (df_bcodmo.columns)
+```
+
+Rename the columns to be able to use them in a graph together
+```python
+df_bcodmo.rename(columns={df_bcodmo.columns.values[3]: 'temperature'}, inplace=True)
+print (df_bcodmo.columns)
+```
+
+
 
 ## plotting the data
 
