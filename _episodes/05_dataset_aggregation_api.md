@@ -74,6 +74,7 @@ print(url)
 ```
 
 Import the dataset into the pandas dataframe and check the lay-out
+
 ```python
 # Convert URL to pandas dataframe
 df_ooi = e.to_pandas( 
@@ -90,8 +91,6 @@ df_ooi.head()
 
 ```python
 # bco-dmo constructor
-url_bcodmo = "https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_817952.graph?longitude%2Clatitude%2CTemperature&time%3E=2017-01-10T00%3A00Z&time%3C=2017-01-17T00%3A00Z&.draw=markers&.marker=5%7C5&.color=0x000000&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff" 
-
 
 e = ERDDAP(
     server= "https://erddap.bco-dmo.org/erddap/",
@@ -110,29 +109,22 @@ e.constraints = {
     "time>=": "2017-01-13T00:00:00Z",
     "time<=": "2017-01-16T23:59:59Z",}
 
-
+```
+```python
 # Print the URL - check
 url = e.get_download_url()
 print(url)
+```
+
+Check your dataset in Pandas
+
+```python
 # Convert URL to pandas dataframe
 df_bcodmo = e.to_pandas(
     
     parse_dates=True,
 ).dropna()
 
-# print the dataframe to check what data is in there specifically. 
-df_bcodmo.head()
-
-# index_col="time (UTC)",
-
-print (df_bcodmo.columns)
-
-df_bcodmo.rename(columns={df_bcodmo.columns.values[3]: 'temperature'}, inplace=True)
-print (df_bcodmo.columns)
-
-```
-Check your dataset in Pandas
-```python
 # print the dataframe to check what data is in there specifically. 
 df_bcodmo.head()
 
@@ -182,6 +174,139 @@ Satellite data NASA? sea surface temperature : **GHRSST Global 1-km Sea Surface 
 
 https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplG1SST.graph?SST%5B(2017-09-13T00:00:00Z)%5D%5B(-79.995):(79.995)%5D%5B(-179.995):(179.995)%5D&.draw=surface&.vars=longitude%7Clatitude%7CSST&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff
 
+install packages:
+
+ https://anaconda.org/anaconda/xarray
+
+```
+conda install -c anaconda netcdf4  
+```
+
+Sea surface temperature, global dataset (0.01 degrees granularity)
+
+Downloading the whole dataset would result in too much memory use, so we need to subset the data before we load it in 
+
+
+
+**griddap request URLs must be in the form** 
+https://coastwatch.pfeg.noaa.gov/erddap/griddap/*[datasetID](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#datasetID)*.*[fileType](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#fileType)*{?*[query](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#query)*} 
+For example, 
+https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.htmlTable?analysed_sst[(2002-06-01T09:00:00Z)][(-89.99):1000:(89.99)][(-179.99):1000:(180.0)] 
+Thus, the query is often a data variable name (e.g., analysed_sst), followed by [(*start*):*stride*:(*stop*)] (or a shorter variation of that) for each of the variable's dimensions (for example, [time][latitude][longitude]). 
+
+
+
+```python
+#Import erddap package into 
+from erddapy import ERDDAP
+
+e = ERDDAP(
+    server="https://coastwatch.pfeg.noaa.gov/erddap/",      	 	       protocol="griddap",
+)
+e.dataset_id = "jplG1SST"  
+
+e.griddap_initialize()
+
+e.constraints = {
+ "time>=": "2017-01-13T00:00:00Z",
+ "time<=": "2017-01-16T23:59:59Z"
+}
+#response="opendap",
+#e.griddap_initialize()
+#e.constraints["longitude"] >= -128.0
+#e.constraints["longitude"] <= -121.0
+#e.constraints["time"] = 2017
+
+ds = e.to_xarray()
+ds
+```
+
+ERDDAP server-side subsetting can be avoided by specifying the opendap  protocol. This is a good choice if you intend to use a full dataset or  take several slices from the same dataset
+
+```python
+e = ERDDAP(
+    server="CSWC",  # CoastWatch West Coast Node
+    protocol="griddap",
+    response="opendap",
+)
+e.dataset_id = "jplAquariusSSS3MonthV5"  # Aquarius Sea Surface Salinity, L3 SMI, Version 5, 1.0°, Global,
+```
+
+```
+ds = e.to_xarray()
+```
+
+```
+ds
+```
+
+```
+ds["sshag"].plot()
+```
+
+
+
+# Download data from ERDDAP
+
+### The exercise demonstrates the following skills:
+
+- Using Python to retrieve information about a dataset from ERDDAP
+- Downloading satellite data from ERDDAP in netCDF format
+- Extracting data with Python
+
+### About the dataset used in this exercise
+
+- For the examples in this exercise we will use the NOAA GeoPolar Sea  Surface Temperature  dataset from the CoastWatch West Coast Node 
+- ERDDAP ID = nesdisGeoPolarSSTN5SQNRT
+- https://coastwatch.pfeg.noaa.gov/erddap/griddap/nesdisGeoPolarSSTN5SQNRT.graph  
+- The dataset contains monthly composites of SST
+- The low spatial resolution (0.05 degrees) will allow for small  download size and help prevent overloading the internet bandwidth during the class  
+
+## Import the primary modules for this tutorial
+
+- numpy is used for matrix operations
+- numpy.ma specifically is used for masked arrays
+- pandas is used for tabular data
+- xarray is used for opening the gridded dataset
+
+
+
+### Open a pointer to an ERDDAP dataset, using the xarray `open_dataset` function
+
+```
+server = 'https://coastwatch.pfeg.noaa.gov/erddap'
+protocol = 'griddap'
+dataset_id = "jplG1SST"
+full_URL = '/'.join([base_URL,protocol,dataset_id])
+print(full_URL)
+da = xr.open_dataset(full_URL)
+
+
+e = ERDDAP(
+    server="https://coastwatch.pfeg.noaa.gov/erddap/",      	 	       protocol="griddap",
+)
+e.dataset_id = "jplG1SST"
+```
+
+
+
+
+
+For this exercise, the area we are interested in includes Monterey Bay, CA:
+
+- Latitude range: 44.0N, 48.0N
+- Longitude range: -128E, -121E
+- Time range 2017-01-13T00:00:00Z to 2017-01-16T23:59:59Z
+
+The Xarray module makes it really easy to request a subset of a  dataset using latitude, longitude, and time ranges. Here is an example  using the `sel` method with the `slice` function.
+
+```
+sst = da['analysed_sst'].sel(  
+                  latitude=slice(32., 39.),  
+                  longitude=slice(-124, -117),  
+                  time=slice('2020-06-03T12:00:00', '2020-06-07T12:00:00')  
+```
+
 
 
 # Exercise: Aggregating data
@@ -209,7 +334,8 @@ Describe the exercise: i.e "In this exercise, you will use Python to download da
 
 *The scripts in this exercise are written in Python 3.7.*
 
+bco-dmo: url_bcodmo = "https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_817952.graph?longitude%2Clatitude%2CTemperature&time%3E=2017-01-10T00%3A00Z&time%3C=2017-01-17T00%3A00Z&.draw=markers&.marker=5%7C5&.color=0x000000&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff" 
 
 
 
-
+xarray datasets: https://xarray.pydata.org/en/v0.10.1/auto_gallery/plot_rasterio_rgb.html

@@ -165,7 +165,7 @@ scatter3D(x = glider$longitude , y = glider$latitude , z = -glider$depth, colvar
 ## Resources: 
 
 * erddapy quick intro: https://ioos.github.io/erddapy/00-quick_intro-output.html
-* erddapy use with gliders rich signel: 
+* erddapy use with gliders rich signel: https://notebook.community/rsignell-usgs/notebook/ERDDAP/ERDDAP_advanced_search_test
 * notebook community: https://notebook.community/pyoceans/erddapy/notebooks/quick_intro 
 * Awesome erddap: global" searches of all erddap servers
 * unpacking the matplotlib function: https://towardsdatascience.com/clearing-the-confusion-once-and-for-all-fig-ax-plt-subplots-b122bb7783ca 
