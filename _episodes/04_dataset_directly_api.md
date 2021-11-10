@@ -22,63 +22,7 @@ Erddapy is a package that  takes advantage of ERDDAP's RESTful web services and 
 
 [Link]( https://github.com/k-rns/workshop_data_reuse/blob/gh-pages/_episodes/04_dataset_directly.ipynb) to static Jupyter Notebook. Copy/Paste the code blocks into your own Jupyter Notebook
 
-## Searching datasets using erddapy
-Step 1: Initiate the ERDDAP URL constructor for a server ( erddapy server object).
 
-```python
-#searching datasets based on words
-from erddapy import ERDDAP
-e = ERDDAP(
-    server="https://erddap.bco-dmo.org/erddap", 
-    protocol="tabledap", 
-    response="csv")
-```
-
-Search with keywords:
-
-```python
-import pandas as pd
-url = e.get_search_url(search_for="Temperature OC1603B", response="csv")
-
-print (url)
-pd.read_csv(url)["Dataset ID"]
-```
-
-Inspect the metadata of dataset with id bcodmo_dataset_817952:
-
-```python
-#find the variables
-info_url = e.get_info_url(dataset_id="bcodmo_dataset_817952")
-pd.read_csv(info_url)
-
-pd.set_option('display.max_rows', None) #make sure that jupyter notebook shows all rows
-dataframe = pd.read_csv(info_url)
-print (dataframe)
-```
-
-```python
-#get the unique variable names with pandas
-dataframe["Variable Name"].unique()
-
-```
-
-Exercise:  
-
-- What are the units of POC?
-
-- Who is the Principal Investigator on this dataset?
-
-- What is the start and end time of this dataset?
-
-  
-
-Exercise: What are the unique variables for "bcodmo_dataset_807119"?
-
-\#find the variables info_url = e.get_info_url(dataset_id="bcodmo_dataset_807119") pd.read_csv(info_url)
-
-pd.set_option('display.max_rows', None) #make sure that jupyter notebook shows all rows dataframe = pd.read_csv(info_url) dataframe
-
-\#get the unique variable names with pandas dataframe["Variable Name"].unique()
 
 ## Import BCO-DMO temperature dataset - Oregon Coast
 
@@ -199,6 +143,65 @@ e.dataset_id = "bcodmo_dataset_817952" e.variables = [    "longitude",    "latit
 
 \#Print the URL - check url = e.get_download_url() print(url
 
+
+
+## Searching datasets using erddapy
+Step 1: Initiate the ERDDAP URL constructor for a server ( erddapy server object).
+
+```python
+#searching datasets based on words
+from erddapy import ERDDAP
+e = ERDDAP(
+    server="https://erddap.bco-dmo.org/erddap", 
+    protocol="tabledap", 
+    response="csv")
+```
+
+Search with keywords:
+
+```python
+import pandas as pd
+url = e.get_search_url(search_for="Temperature OC1603B", response="csv")
+
+print (url)
+pd.read_csv(url)["Dataset ID"]
+```
+
+Inspect the metadata of dataset with id bcodmo_dataset_817952:
+
+```python
+#find the variables
+info_url = e.get_info_url(dataset_id="bcodmo_dataset_817952")
+pd.read_csv(info_url)
+
+pd.set_option('display.max_rows', None) #make sure that jupyter notebook shows all rows
+dataframe = pd.read_csv(info_url)
+print (dataframe)
+```
+
+```python
+#get the unique variable names with pandas
+dataframe["Variable Name"].unique()
+
+```
+
+Exercise:  
+
+- What are the units of POC?
+
+- Who is the Principal Investigator on this dataset?
+
+- What is the start and end time of this dataset?
+
+  
+
+Exercise: What are the unique variables for "bcodmo_dataset_807119"?
+
+\#find the variables info_url = e.get_info_url(dataset_id="bcodmo_dataset_807119") pd.read_csv(info_url)
+
+pd.set_option('display.max_rows', None) #make sure that jupyter notebook shows all rows dataframe = pd.read_csv(info_url) dataframe
+
+\#get the unique variable names with pandas dataframe["Variable Name"].unique()
 
 
 #### NOTE:  RERRDAP: package for R users to work directly with erddap servers
