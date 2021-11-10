@@ -188,8 +188,6 @@ $ curl https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_783911.htmlTabl
 
 
 
-
-
 ## Download the dataset with Python
 
 In the previous chapter we saw that we could download a dataset from erddap pushing a button. 
@@ -221,18 +219,22 @@ The urllib.request library helps with opening URLs. It is part of the erddapy pa
 import urllib.request
 ```
 
+Some characters cannot be part of a URL, like commas and >. When pasting a URL with comma's into your webbrowser it automatically translates those carachers into a different encoding before transmission. 
+
 ```python
 #define the url you want to download
-download_url = "https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_815732.csv?Cruise_ID,Cast_ID,Station_ID,UTC_Date,UTC_Time,time,latitude,longitude,depth,Strain_Gauge_Pressure,Conductivity,Salinity,Temperature,Potential_Temp,Density,Sigma_theta,Oxygen_mLL,Oxygen_pcnt,PAR_Irradiance,ISUS,flag"
+download_url = "https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_783911.csv?Station,time,Temperature,latitude,longitude&Temperature%3E=0&Temperature%3C=2"
     
+```
+
+
+```python
 # Define where you want to save the file on your computer
 name_to_save = "bcodmo_dataset_815732.csv"
 
 # download the dataset   
 urllib.request.urlretrieve(download_url, name_to_save)
 ```
-
-
 
 Import the **Pandas library** to work with tables in your Python environment.
 
