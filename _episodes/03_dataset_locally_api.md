@@ -23,7 +23,7 @@ We have just seen that we can search erddap for datsets. The main takeaways were
 
 * You can search 2 types of data, also called **protocols**: tabledap & griddap 
 * A dataset in ERDDAP can be downloaded in many **different file types**, based on what you need.
-* You can **subset a dataset** based osn constrainting the variables.
+* You can **subset a dataset** based on constrainting the variables.
 
 In the next chapter, we'll see that an ERDDAP can not only be used in the web interface like we did, but also as a URL that computer programs can use  (in this case, to get data, graphs, and information about datasets).
 
@@ -54,7 +54,7 @@ Requesting data from ERDDAP can be done using a URL. All information about every
 **Tabledap request URLs must be in the form** 
 
 * server/protocol/datasetID.fileType{?query }
-*  https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDySst.htmlTable?longitude,latitude,time,station,wmo_platform_code,T_25&time%3E=2015-05-23T12:00:00Z&time%3C=2015-05-31T12:00:00Z 
+*  [https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDySst.htmlTable?longitude,latitude,time,station,wmo_platform_code,T_25&time%3E=2015-05-23T12:00:00Z&time%3C=2015-05-31T12:00:00Z](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDySst.htmlTable?longitude,latitude,time,station,wmo_platform_code,T_25&time%3E=2015-05-23T12:00:00Z&time%3C=2015-05-31T12:00:00Z ) 
 
 Thus, the query is often a comma-separated list of desired variable names, followed by a collection of  constraints (e.g., *variable*<*value*),  each preceded by '&' (which is interpreted as "AND").
 
@@ -62,11 +62,9 @@ Thus, the query is often a comma-separated list of desired variable names, follo
 
 - Requests must not have any internal spaces.
 
-- Requests are case sensitive.
+- Requests are case sensitive. 
 
-- {} is notation to denote an optional part of the request.  
-  
-- [**datasetID**](http://www.neracoos.org/erddap/tabledap/documentation.html#datasetID) identifies the name that ERDDAP  assigned to the source web site and dataset  (for example, pmelTaoDySst). You can see a list of    [datasetID options available via tabledap](http://www.neracoos.org/erddap/tabledap/index.html).  
+- [**datasetID**](http://www.neracoos.org/erddap/tabledap/documentation.html#datasetID) identifies the name that ERDDAP  assigned to the source web site and dataset  (for example, bcodmo_dataset_786013). You can see a list of    [datasetID options available via tabledap](https://erddap.bco-dmo.org/erddap/tabledap/index.html).  
   
   
   
@@ -76,7 +74,9 @@ Thus, the query is often a comma-separated list of desired variable names, follo
 # Building the URL of a dataset
 Example dataset that we will be using: https://www.bco-dmo.org/dataset/815732
 
+ERRDAP location of dataset: https://erddap.bco-dmo.org/erddap/info/bcodmo_dataset_783911/index.html 
 
+Exercise: Open up a notepad (++) or TextEdit
 
 
 ### 1. ERDDAP server you want to get data
@@ -89,6 +89,8 @@ Protocols are the standards which specify how to request data.  Different protoc
 **griddap** lets you request a data subset, graph, or map from a  gridded dataset (for example, sea surface temperature data from a satellite), via a specially formed URL
 
 ### 3. Dataset ID
+
+The dataset id of our dataset previously used was:  bcodmo_dataset_783911
 
 ### 4. Choose your file type
 
@@ -142,32 +144,25 @@ IMPORTANT NOTE: The actual extension of the resulting file may be slightly diffe
 
 ### 5. Data request
 
-The data request in the URL starts with `?`
+* The data request in the URL starts with `?`
 
-Then add the variables of interest: all variables
+* Then add the variables of interest: all variables
 
-* Cruise_ID
-* Cast_ID
-* Station_ID
-* UTC_Date
-* UTC_Time
-* time
-* latitude
-* longitude
-* depth
-* Conductivity
-* Salinity
-* Temperature
+* The query is a comma-separated list of desired variable names, followed by a collection of  constraints (e.g., *variable*<*value*),  each preceded by '&' (which is interpreted as "AND").
 
-### Exercise
+Variables that can be added to your URL: https://erddap.bco-dmo.org/erddap/info/bcodmo_dataset_783911/index.html  -> it is case sensitive!
 
-Change the URL so you get data where temperature is only between 
+We want the following variables: Station, time, Temperature (between 0 and 2), latitude, longitude 
 
-Date is 
+https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_783911.htmlTable?Station,time,Temperature,latitude,longitude&Temperature>=0&Temperature<=2
+
+
 
 NOTE: Just generate the URL: 
 
-Erddap table: https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_815732.csv?Cruise_ID,Cast_ID,Station_ID,UTC_Date,UTC_Time,time,latitude,longitude,depth,Strain_Gauge_Pressure,Conductivity,Salinity,Temperature,Potential_Temp,Density,Sigma_theta,Oxygen_mLL,Oxygen_pcnt,PAR_Irradiance,ISUS,flag
+https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_783911.htmlTable?Station%2Ctime%2CTemperature%2Clatitude%2Clongitude&Temperature%3E=0&Temperature%3C=2
+
+
 
 # Access 
 
@@ -179,12 +174,21 @@ What happens when you copy and past that URL into a web browser
 
 ## Command line
 
-You can use `curl` on command line to make requests and get responses.
+You can use `curl` on command line/Terminal to make requests and get responses.
 
 ~~~bash
-$ curl https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_815732.csv?Cruise_ID,Cast_ID,Station_ID,UTC_Date,UTC_Time,time,latitude,longitude,depth,Strain_Gauge_Pressure,Conductivity,Salinity,Temperature,Potential_Temp,Density,Sigma_theta,Oxygen_mLL,Oxygen_pcnt,PAR_Irradiance,ISUS,flag
+$ curl https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_783911.htmlTable?Station,time,Temperature,latitude,longitude&Temperature>=0&Temperature<=2
 ~~~
-Output:
+
+
+## Exercise: 
+
+* Add the Fluorescence variable to your URL request
+* Constrain it to value between 0 and 40
+
+
+
+
 
 ## Download the dataset with Python
 
@@ -197,8 +201,8 @@ In the previous chapter we saw that we could download a dataset from erddap push
 Opening a Jupyter Notebook on your own computer:
 
 * Open anaconda prompt or terminal
-* Activate erddap environment
-* Go to the location where you want your notebook to be
+* Activate erddap environment `conda activate erddap`
+* Go to the location where you want your notebook to be: `dir` or `ls`  and `cd` commands are useful
 * jupyter notebook in command line
 * go to new -> Python 3
 
@@ -206,11 +210,11 @@ Opening a Jupyter Notebook on your own computer:
 
 We just build the following URL in an exercise: 
 
-https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_815732.csv?Cruise_ID,Cast_ID,Station_ID,UTC_Date,UTC_Time,time,latitude,longitude,depth,Strain_Gauge_Pressure,Conductivity,Salinity,Temperature,Potential_Temp,Density,Sigma_theta,Oxygen_mLL,Oxygen_pcnt,PAR_Irradiance,ISUS,flag
+https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_783911.htmlTable?Station,time,Temperature,latitude,longitude&Temperature>=0&Temperature<=2
 
 Let's now download it with python to our computer locally.
 
-The urllib library is part of the erddapy package that you have  installed. Import this package into the Python environment  to work with url's in your environment
+The urllib.request library helps with opening URLs. It is part of the erddapy package that you have  installed. Import this package into the Python environment  to work with url's in your environment
 
 ```python
 # Import the urllib library
