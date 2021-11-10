@@ -25,6 +25,8 @@ For example,
 https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.htmlTable?analysed_sst[(2002-06-01T09:00:00Z)][(-89.99):1000:(89.99)][(-179.99):1000:(180.0)] 
 Thus, the query is often a data variable name (e.g., analysed_sst), followed by [(*start*):*stride*:(*stop*)] (or a shorter variation of that) for each of the variable's dimensions (for example, [time][latitude][longitude]). 
 
+[Link]( https://github.com/k-rns/workshop_data_reuse/blob/gh-pages/_episodes/06_gridded_data.ipynb) to static Jupyter Notebook. Copy/Paste the code blocks into your own Jupyter Notebook
+
 xarray works similarly as the pandas data package. 
 
 ```python
