@@ -65,12 +65,12 @@ Each repository and/or program has its own type of data it is serving. To export
 
 * Serves data and information from biological, chemical and biogeochemical research conducted in coastal, marine, great lakes and laboratory environments. (Supporting  mainly NSF OCE bio & Chem sections) 
 
-* BCO-DMO ERDDAP Server: https://erddap.bco-dmo.org/erddap/index.html 
+* BCO-DMO ERDDAP Server: [https://erddap.bco-dmo.org/erddap/index.html](https://erddap.bco-dmo.org/erddap/index.html) 
 
 [**OOI**](https://oceanobservatories.org/)
 
 * The OOI consists of five marine scientific arrays located in the North and South Atlantic and Pacific Oceans delivering real-time data from more than 800 instruments 
-* OOI ERDDAP Server: https://erddap.dataexplorer.oceanobservatories.org/erddap/index.html 
+* OOI ERDDAP Server: [https://erddap.dataexplorer.oceanobservatories.org/erddap/index.html](https://erddap.dataexplorer.oceanobservatories.org/erddap/index.html) 
 
 [**Argo**](https://argo.ucsd.edu/) 
 

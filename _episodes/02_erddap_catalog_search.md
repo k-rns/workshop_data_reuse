@@ -50,11 +50,13 @@ The listing (pictured above) gives access to a lot of information about the data
 * Mouse over the question mark `?` under **Summary** to get an overview of the dataset.
 * Click **"Background info"** to get more complete information from the data provider about the dataset. Now go back to the search results page.
 * Click the `"M"` under **"ISO,Metadata"** to see all of the dataset metadata. A lot of information is displayed. Some important fields are:
+  * Global attributes (general metadata) vs variable attributes (variable names & units)
   * `"geospatial_lat_min"`, `"geospatial_lat_max"`, `"geospatial_lon_min"`, and `"geospatial_lon_max"` for the spatial coverage
   * `"references"` for citing the dataset in publications
   * `"license"` for restrictions on using the data
   * `"acknowledgement"` often used to describe how to acknowledge use of the dataset
   * time: ERDDAP standardizes the dates+times in the results.  Data from other data servers is hard to compare    because the dates+times often are expressed in different formats    (for example, "Jan 2, 2018", 02-JAN-2018, 1/2/18, 2/1/18,    2018-01-02, "days since Jan 1, 1900").  For string times, ERDDAP always uses the ISO 8601:2004(E) standard format,    for example, 2018-01-02T00:00:00Z.  For numeric times, ERDDAP always uses "seconds since 1970-01-01T00:00:00Z".  ERDDAP always uses the Zulu (UTC, GMT) time zone to remove the difficulties    of working with different time zones and standard time versus daylight saving time.
+
 
 These standardised variables are important for the dataset to be able to be "read" by other end-users and machines.
 
@@ -92,6 +94,7 @@ Searching the BGC-Argo data:
   * how many datasets are being returned?
   * What is the difference between the datasets? (Does the title give something away?)
   * What is the time range the datasets have? (Hint click data tab)
+  * Download a dataset in .csv format that ranges in time from May 1st, 2015 until May 3rd 2015
 
 Exercise from:  [Tabular Datasets with BGC-Argo data](https://dale-robinson.gitbook.io/coastwatch-satellite-course-may-2021/tutorials/erddap/tabular-datasets-bgc-argo-data)
 
