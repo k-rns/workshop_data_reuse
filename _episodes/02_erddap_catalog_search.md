@@ -72,7 +72,7 @@ Click on the data button. Here is the link to the dataset in erddap: https://erd
 
 ![image-20211026193729341](../assets/img/image-20211026193729341.png)
 
-### Set the file type
+### Set the file type 
 
 ### Download the data "Submit"
 
@@ -90,8 +90,8 @@ Searching the BGC-Argo data:
 * search “Biogeochemical-Argo” 
 * Questions: 
   * how many datasets are being returned?
-  * What is the difference between the datasets? 
-  * What is the time range the datasets have?
+  * What is the difference between the datasets? (Does the title give something away?)
+  * What is the time range the datasets have? (Hint click data tab)
 
 Exercise from:  [Tabular Datasets with BGC-Argo data](https://dale-robinson.gitbook.io/coastwatch-satellite-course-may-2021/tutorials/erddap/tabular-datasets-bgc-argo-data)
 
