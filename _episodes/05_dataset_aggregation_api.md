@@ -28,14 +28,7 @@ Note; We will be importing datasets from different servers, bear in mind that th
 
 
 
-```python
-#Import erddap package into 
-from erddapy import ERDDAP
-```
-
-
-
-## OOI temperature dataset - Oregon Coast
+## OOI temperature dataset - Oregon Coast 2017
 
 Import an OOI dataset. Background on the dataset we are importing [here](https://ooinet.oceanobservatories.org/data_access/?search=CE01ISSM-RID16-03-CTDBPC000) and [here](https://sensors.ioos.us/#metadata/103705/station) :
 
@@ -44,6 +37,7 @@ Import an OOI dataset. Background on the dataset we are importing [here](https:/
 * Instrument CTD. 
 
 ```python
+#Import erddap package
 from erddapy import ERDDAP
 
 # ooi constructor:
@@ -77,70 +71,102 @@ Import the dataset into the pandas dataframe and check the lay-out
 
 ```python
 # Convert URL to pandas dataframe
-df_ooi = e.to_pandas( 
+df_ooi_2017 = e.to_pandas( 
     parse_dates=True,
 ).dropna()
 
-df_ooi.head()
+df_ooi_2017.head()
+df_ooi_2017
 ```
 
-
-
-## BCO-DMO temperature dataset - Oregon Coast
-
+Plot the data 
 
 ```python
-# bco-dmo constructor
+df_ooi_2017.plot (x='longitude (degrees_east)', 
+                    y='latitude (degrees_north)', 
+                    kind = 'scatter',
+                    c='sea_water_temperature (degree_Celsius)', 
+                    colormap="YlOrRd")
+```
+
+## OOI temperature dataset 2018 - Oregon Coast
+
+```python
+#Import erddap package into 
+from erddapy import ERDDAP
+# ooi constructor:
 
 e = ERDDAP(
-    server= "https://erddap.bco-dmo.org/erddap/",
+    server= " https://erddap.dataexplorer.oceanobservatories.org/erddap/",
     protocol="tabledap",
     response="csv",
 )
 
-e.dataset_id = "bcodmo_dataset_817952"
+e.dataset_id = "ooi-ce01issm-rid16-03-ctdbpc000"
 e.variables = [
     "longitude",
     "latitude",
     "time",
-    "Temperature"
+    "sea_water_temperature"
 ]
 e.constraints = {
-    "time>=": "2017-01-13T00:00:00Z",
-    "time<=": "2017-01-16T23:59:59Z",}
-
+    "time>=": "2018-01-13T00:00:00Z",
+    "time<=": "2018-01-13T23:59:59Z",}
+print ('done')
 ```
+
 ```python
 # Print the URL - check
 url = e.get_download_url()
 print(url)
 ```
 
-Check your dataset in Pandas
-
 ```python
 # Convert URL to pandas dataframe
-df_bcodmo = e.to_pandas(
-    
+df_ooi_2018 = e.to_pandas( 
     parse_dates=True,
 ).dropna()
 
-# print the dataframe to check what data is in there specifically. 
-df_bcodmo.head()
+df_ooi_2018.head()
+print (df_ooi_2018)
 
-# index_col="time (UTC)",
-print (df_bcodmo.columns)
 ```
 
-Rename the columns to be able to use them in a graph together
+# Combining the datasets
+
+averaging the datasets
+
+Convert the objects to datetime objects
+
 ```python
-df_bcodmo.rename(columns={df_bcodmo.columns.values[3]: 'temperature'}, inplace=True)
-print (df_bcodmo.columns)
+import pandas as pd
+print (df_ooi_2017.dtypes)
+df_ooi_2017["time (UTC)"] = pd.to_datetime (df_ooi_2017["time (UTC)"], format = "%Y-%m-%dT%H:%M:%S")
+
+print (df_ooi_2017.dtypes)
 ```
 
 
 
-## plotting the data
+```python
+import pandas as pd
+print (df_ooi_2018.dtypes)
+df_ooi_2018["time (UTC)"] = pd.to_datetime (df_ooi_2018["time (UTC)"], format = "%Y-%m-%dT%H:%M:%S")
+
+print (df_ooi_2017.dtypes)
+```
+
+```python
+df_ooi_2017_average = df_ooi_2017.groupby(df_ooi_2017["time (UTC)"].dt.hour)['sea_water_temperature (degree_Celsius)'].mean().reset_index()
+print (df_ooi_2017_average)
+```
+
+```python
+df_ooi_2018_average = df_ooi_2018.groupby(df_ooi_2018["time (UTC)"].dt.hour)['sea_water_temperature (degree_Celsius)'].mean().reset_index()
+print (df_ooi_2018_average)
+```
+
+
 
 ```python
 %matplotlib inline
@@ -148,20 +174,23 @@ print (df_bcodmo.columns)
 import matplotlib.pyplot as plt
 
 plt.figure(figsize=(12,5)) 
-plt.plot(df_bcodmo["time (UTC)"],df_bcodmo['temperature'],label='bcodmo',c='red',marker='.',linestyle='-') 
-plt.plot(df_ooi["time (UTC)"],df_ooi["sea_water_temperature (degree_Celsius)"],label='OOI',c='blue',marker='.',linestyle='-') 
+plt.plot(df_ooi_2017_average["time (UTC)"],df_ooi_2017_average["sea_water_temperature (degree_Celsius)"],label='2017',c='red',marker='.',linestyle='-') 
+plt.plot(df_ooi_2018_average["time (UTC)"],df_ooi_2018_average["sea_water_temperature (degree_Celsius)"],label='2018',c='blue',marker='.',linestyle='-') 
 plt.ylabel('degrees celsius')
+plt.title("January 13th")
 plt.legend()
-# plt.yticks(rotation=90)
+plt.yticks(rotation=90)
 
 
-fig, (ax1, ax2) = plt.subplots(2)
-fig.suptitle('Vertically stacked subplots')
-ax1.plot(df_bcodmo["time (UTC)"],df_bcodmo['temperature'],label='bcodmo',c='red',marker='.',linestyle='-')
-ax2.plot(df_ooi["time (UTC)"],df_ooi["sea_water_temperature (degree_Celsius)"],label='OOI',c='blue',marker='.',linestyle='-')
-ax1.set(ylabel='degrees celsius')
-ax2.set(ylabel='degrees celsius')
+#fig, (ax1, ax2) = plt.subplots(2)
+#fig.suptitle('Vertically stacked subplots')
+#ax1.plot(df_bcodmo["time (UTC)"],df_bcodmo['temperature'],label='bcodmo',c='red',marker='.',linestyle='-')
+#ax2.plot(df_ooi["time (UTC)"],df_ooi["sea_water_temperature (degree_Celsius)"],label='OOI',c='blue',marker='.',linestyle='-')
+#ax1.set(ylabel='degrees celsius')
+#ax2.set(ylabel='degrees celsius')
 ```
+
+
 
 
 
