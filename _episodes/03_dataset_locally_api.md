@@ -202,12 +202,22 @@ Opening a Jupyter Notebook on your own computer:
 * jupyter notebook in command line
 * go to new -> Python 3
 
-Download/import the **urllib package** into the Python environment  to work with url's in your environment:  [Python Documentation](https://docs.python.org/3/library/urllib.html)
+
+
+We just build the following URL in an exercise: 
+
+https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_815732.csv?Cruise_ID,Cast_ID,Station_ID,UTC_Date,UTC_Time,time,latitude,longitude,depth,Strain_Gauge_Pressure,Conductivity,Salinity,Temperature,Potential_Temp,Density,Sigma_theta,Oxygen_mLL,Oxygen_pcnt,PAR_Irradiance,ISUS,flag
+
+Let's now download it with python to our computer locally.
+
+The urllib library is part of the erddapy package that you have  installed. Import this package into the Python environment  to work with url's in your environment
 
 ```python
 # Import the urllib library
 import urllib.request
+```
 
+```python
 #define the url you want to download
 download_url = "https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_815732.csv?Cruise_ID,Cast_ID,Station_ID,UTC_Date,UTC_Time,time,latitude,longitude,depth,Strain_Gauge_Pressure,Conductivity,Salinity,Temperature,Potential_Temp,Density,Sigma_theta,Oxygen_mLL,Oxygen_pcnt,PAR_Irradiance,ISUS,flag"
     
@@ -216,6 +226,18 @@ name_to_save = "bcodmo_dataset_815732.csv"
 
 # download the dataset   
 urllib.request.urlretrieve(download_url, name_to_save)
+```
+
+
+
+Import the **Pandas library** to work with tables in your Python environment.
+
+```python
+# Import the downloaded .csv data into jupyter notebooks with the package Pandas
+import pandas as pd
+pd.read_csv ("bcodmo_dataset_815732.csv)
+dataframe = pd.read_csv ("bcodmo_dataset_815732.csv", dtype='unicode')
+print (dataframe)
 ```
 
 
