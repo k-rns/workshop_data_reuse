@@ -33,9 +33,7 @@ When making your data freely available, it is important that end-users reusing d
 
 Repositories are here to make the journey to open data easier: juggling data  principles and policies, funding requirements, publication  specifications, research specifics, archiving and discovery through  online search engines. Repository types range from general repositories, which curate heterogeneous types of data, to Institutional repositories who are more familiar with the research at the institution to domain specific repositories (such as BCO-DMO). Domain-specific repositories have the role to make sure the data they receive have the correct domain- specific, standardized metadata and make them publicly available. 
 
-<img src="../assets/img/image-20211026180557738.png" alt="image-20211026180557738" style="zoom:40%;" />
-
-
+![image-20211026180557738.png](../assets/img/image-20211026180557738.png)
 
 So in short, the **data life cycle** follows this pattern: Data acquisition & analysis -> Data publication & preservation ->  Data Reuse (multiple researchers)
 
