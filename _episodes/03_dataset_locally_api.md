@@ -23,7 +23,7 @@ We have just seen that we can search erddap for datsets. The main takeaways were
 
 * You can search 2 types of data, also called **protocols**: tabledap & griddap 
 * A dataset in ERDDAP can be downloaded in many **different file types**, based on what you need.
-* You can **subset a dataset** based on constrainting the variables.
+* You can **subset a dataset** based osn constrainting the variables.
 
 In the next chapter, we'll see that an ERDDAP can not only be used in the web interface like we did, but also as a URL that computer programs can use  (in this case, to get data, graphs, and information about datasets).
 
@@ -84,15 +84,13 @@ https://erddap.bco-dmo.org/erddap
 
 ### 2. Protocol
 
-Protocols are the standards which specify how to request data.  Different protocols are appropriate for different types of data and for different client applications.
+Protocols are the standards which specify how to request data.  Different protocols are appropriate for different types of data and for different client applications.tabledap lets you request a data subset, a graph, or a map from  a tabular dataset (for example, buoy data), via a specially formed URL
 
 **griddap** lets you request a data subset, graph, or map from a  gridded dataset (for example, sea surface temperature data from a satellite), via a specially formed URL
 
-ets you request a data subset, a graph, or a map from  a tabular dataset (for example, buoy data), via a specially formed URL
+### 3. Dataset ID
 
-tabledap / griddap
-
-### 3. Choose your file type
+### 4. Choose your file type
 
 Specifies the type of table data file that you  want to download. You can use different filetype based on your specific needs and your community, you can download files for matlab binary file, netcdf, .csv (for R and Python), GIS, etc. The column below gives all the formats available:   
 
@@ -142,8 +140,7 @@ In this lesson we will use the .csv file type to import it in Jupyter Notebook a
 IMPORTANT NOTE: The actual extension of the resulting file may be slightly different than the fileType (for example,  .htmlTable returns an .html file).  **To get a .csv file with the header names in the first row the file type is .csvp.** 
 
 
-
-## 4. Data request
+### 5. Data request
 
 The data request in the URL starts with `?`
 
@@ -193,7 +190,11 @@ Output:
 
 In the previous chapter we saw that we could download a dataset from erddap pushing a button. 
 
-Live coding demo:
+**Live coding demo**
+
+[Link](https://github.com/k-rns/workshop_data_reuse/blob/gh-pages/_episodes/03_dataset_locally_api.ipynb ) to static Jupyter Notebook. Copy/Paste the code blocks into your own Jupyter Notebook
+
+Opening a Jupyter Notebook on your own computer:
 
 * Open anaconda prompt or terminal
 * Activate erddap environment
@@ -216,8 +217,6 @@ name_to_save = "bcodmo_dataset_815732.csv"
 # download the dataset   
 urllib.request.urlretrieve(download_url, name_to_save)
 ```
-
-
 
 
 
