@@ -1,6 +1,6 @@
 ---
 title: "Data requests using an ERDDAP URL"
-teaching: 20
+teaching: 30
 exercises: 10
 questions:
 - "What is ERDDAP REST API?"
@@ -64,7 +64,7 @@ Thus, the query is often a comma-separated list of desired variable names, follo
 
 - Requests are case sensitive. 
 
-- [**datasetID**](http://www.neracoos.org/erddap/tabledap/documentation.html#datasetID) identifies the name that ERDDAP  assigned to the source web site and dataset  (for example, bcodmo_dataset_786013). You can see a list of    [datasetID options available via tabledap](https://erddap.bco-dmo.org/erddap/tabledap/index.html).  
+- [**datasetID**](http://www.neracoos.org/erddap/tabledap/documentation.html#datasetID) identifies the name that ERDDAP  assigned to the source web site and dataset  (for example, bcodmo_dataset_786013). You can see a list of  [datasetID options available via tabledap](https://erddap.bco-dmo.org/erddap/tabledap/index.html).  
   
   
   
@@ -74,12 +74,12 @@ Let's manually create an ERDDAP URL to request a dataset with specific variables
 
 Links to the example dataset we will be using:
 
-* BCO-DMO landing page:  https://www.bco-dmo.org/dataset/815732
-* ERDDAP page of dataset: https://erddap.bco-dmo.org/erddap/info/bcodmo_dataset_783911/index.html
+* BCO-DMO landing page:  [https://www.bco-dmo.org/dataset/815732](https://www.bco-dmo.org/dataset/815732)
+* ERDDAP page of dataset: [https://erddap.bco-dmo.org/erddap/info/bcodmo_dataset_783911/index.html](https://erddap.bco-dmo.org/erddap/info/bcodmo_dataset_783911/index.html)
 
 
 ### 1. ERDDAP server you want to get data
-BCO-DMO ERDDAP server: https://erddap.bco-dmo.org/erddap
+BCO-DMO ERDDAP server: [https://erddap.bco-dmo.org/erddap](https://erddap.bco-dmo.org/erddap)
 
 ### 2. Protocol
 
@@ -183,10 +183,9 @@ $ curl https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_783911.htmlTabl
 
 
 ## Exercise: 
-
-* Add the Fluorescence variable to your URL request
-* Constrain it to value between 0 and 40
-
+> * Add the Fluorescence variable to your URL request
+> * Constrain it to value between 0 and 40
+{: .challenge}
 
 
 ## Download the dataset with Python
