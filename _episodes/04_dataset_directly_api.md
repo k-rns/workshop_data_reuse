@@ -185,23 +185,38 @@ dataframe["Variable Name"].unique()
 
 ```
 
-Exercise:  
+### Exercise: Inspect this BCO-DMO dataset 
 
-- What are the units of POC?
-
-- Who is the Principal Investigator on this dataset?
-
-- What is the start and end time of this dataset?
-
+> * What are the units of POC?
+> *  Who is the Principal Investigator on this dataset?
+> *  What is the start and end time of this dataset?
+{: .challenge}
   
+### Exercise
 
-Exercise: What are the unique variables for "bcodmo_dataset_807119"?
+> What are the unique variables for "bcodmo_dataset_807119?"
+> > #### Answer
+> > ~~~
+> > # find the variables
+> > info_url = e.get_info_url(dataset_id="bcodmo_dataset_807119") 
+> > pd.read_csv(info_url)
+> > 
+> > pd.set_option('display.max_rows', None) #make sure that jupyter notebook shows all rows 
+> > dataframe = pd.read_csv(info_url) dataframe
+> >
+> > # get the unique variable names with pandas
+> >  dataframe["Variable Name"].unique()
+> > ~~~
+> {: .solution}
+{: .challenge}
 
-\#find the variables info_url = e.get_info_url(dataset_id="bcodmo_dataset_807119") pd.read_csv(info_url)
 
-pd.set_option('display.max_rows', None) #make sure that jupyter notebook shows all rows dataframe = pd.read_csv(info_url) dataframe
 
-\#get the unique variable names with pandas dataframe["Variable Name"].unique()
+
+
+
+
+
 
 
 #### NOTE:  RERRDAP: package for R users to work directly with erddap servers
@@ -230,13 +245,3 @@ scatter3D(x = glider$longitude , y = glider$latitude , z = -glider$depth, colvar
 ```
 
 ![outcome_R_example](https://docs.ropensci.org/rerddap/man/figures/glider-1.png)
-
-## Resources: 
-
-* erddapy quick intro: https://ioos.github.io/erddapy/00-quick_intro-output.html
-* erddapy use with gliders rich signel: https://notebook.community/rsignell-usgs/notebook/ERDDAP/ERDDAP_advanced_search_test
-* notebook community: https://notebook.community/pyoceans/erddapy/notebooks/quick_intro 
-* Awesome erddap: global" searches of all erddap servers
-* unpacking the matplotlib function: https://towardsdatascience.com/clearing-the-confusion-once-and-for-all-fig-ax-plt-subplots-b122bb7783ca 
-* ERDDAP class API: https://ioos.github.io/erddapy/erddapy.html
-

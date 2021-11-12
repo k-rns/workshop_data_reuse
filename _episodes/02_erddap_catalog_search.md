@@ -90,9 +90,8 @@ ERRDAP also provides a graph function for your datasets, but I will not go into 
 
 
 
-## Exercise:
+## Exercise: Inspect BGC-Argo data
 
-> * Searching the BGC-Argo data:
 > * Go to the ERDDAP server: https://polarwatch.noaa.gov/erddap/.  
 > * search “Biogeochemical-Argo” .  
 > * Q:  how many datasets are being returned?
