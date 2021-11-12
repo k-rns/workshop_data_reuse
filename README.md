@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5683655.svg)](https://doi.org/10.5281/zenodo.5683655
+
 # Reusing Open Data with ERDDAP and Python
 
 Go to the lesson site to view this lesson: https://k-rns.github.io/workshop_data_reuse/ 
