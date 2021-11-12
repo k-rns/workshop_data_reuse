@@ -133,17 +133,35 @@ df_bcodmo_13_average.plot (
     colormap="YlOrRd")
 ```
 
-Exercise:  Create the URL for this dataset with the variable POC instead of temperature
-
-\#Import erddap package into  from erddapy import ERDDAP
-
-e = ERDDAP(    server= "https://erddap.bco-dmo.org/erddap/",    protocol="tabledap",    response="csv", )
-
-e.dataset_id = "bcodmo_dataset_817952" e.variables = [    "longitude",    "latitude",    "time",    "POC" ] e.constraints = {    "time>=": "2017-01-13T00:00:00Z",    "time<=": "2017-01-16T23:59:59Z",}
-
-\#Print the URL - check url = e.get_download_url() print(url
-
-
+### Exercise:  
+> Create the URL for this dataset with the variable POC instead of temperature 
+> 
+> > #### Answer
+> >
+> > ~~~
+> > #Import erddap package into  from erddapy import ERDDAP
+> > 
+> > e = ERDDAP(    
+> > server= "https://erddap.bco-dmo.org/erddap/",    
+> > protocol="tabledap",   
+> > response="csv", )
+>>
+> > e.dataset_id = "bcodmo_dataset_817952" 
+> > e.variables = [    
+> > "longitude",    
+> > "latitude",    
+> > "time",    
+> > "POC" ] 
+> > e.constraints = {    
+> > "time>=": "2017-01-13T00:00:00Z",    
+> > "time<=": "2017-01-16T23:59:59Z",}
+> > 
+> > #Print the URL - check 
+> > url = e.get_download_url() 
+> > print(url)
+> > ~~~
+> > {: .language-python} 
+{: .challenge}
 
 ## Searching datasets using erddapy
 Step 1: Initiate the ERDDAP URL constructor for a server ( erddapy server object).
