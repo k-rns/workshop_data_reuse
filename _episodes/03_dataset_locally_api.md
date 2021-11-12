@@ -69,22 +69,23 @@ Thus, the query is often a comma-separated list of desired variable names, follo
   
   
 
-
-
 # Building the URL of a dataset
-Example dataset that we will be using: https://www.bco-dmo.org/dataset/815732
+Let's manually create an ERDDAP URL to request a dataset with specific variables: open up notepad (++) or TextEdit
 
-ERRDAP location of dataset: https://erddap.bco-dmo.org/erddap/info/bcodmo_dataset_783911/index.html 
+Links to the example dataset we will be using:
 
-Exercise: Open up a notepad (++) or TextEdit
+* BCO-DMO landing page:  https://www.bco-dmo.org/dataset/815732
+* ERDDAP page of dataset: https://erddap.bco-dmo.org/erddap/info/bcodmo_dataset_783911/index.html
 
 
 ### 1. ERDDAP server you want to get data
-https://erddap.bco-dmo.org/erddap
+BCO-DMO ERDDAP server: https://erddap.bco-dmo.org/erddap
 
 ### 2. Protocol
 
-Protocols are the standards which specify how to request data.  Different protocols are appropriate for different types of data and for different client applications.tabledap lets you request a data subset, a graph, or a map from  a tabular dataset (for example, buoy data), via a specially formed URL
+Protocols are the standards which specify how to request data.  Different protocols are appropriate for different types of data and for different client applications.
+
+**tabledap** lets you request a data subset, a graph, or a map from  a tabular dataset (for example, buoy data), via a specially formed URL
 
 **griddap** lets you request a data subset, graph, or map from a  gridded dataset (for example, sea surface temperature data from a satellite), via a specially formed URL
 
@@ -154,13 +155,13 @@ Variables that can be added to your URL: https://erddap.bco-dmo.org/erddap/info/
 
 We want the following variables: Station, time, Temperature (between 0 and 2), latitude, longitude 
 
+
+
+### 6.  URL outcome
+
 https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_783911.htmlTable?Station,time,Temperature,latitude,longitude&Temperature>=0&Temperature<=2
 
-
-
-NOTE: Just generate the URL: 
-
-https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_783911.htmlTable?Station%2Ctime%2CTemperature%2Clatitude%2Clongitude&Temperature%3E=0&Temperature%3C=2
+Note: you can also get the URL using the ERDDAP web interface by clicking the "Just generate the URL" button: https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_783911.htmlTable?Station%2Ctime%2CTemperature%2Clatitude%2Clongitude&Temperature%3E=0&Temperature%3C=2
 
 
 
@@ -245,12 +246,3 @@ pd.read_csv ("bcodmo_dataset_815732.csv)
 dataframe = pd.read_csv ("bcodmo_dataset_815732.csv", dtype='unicode')
 print (dataframe)
 ```
-
-
-
-## Resources
-
-* NOAA satellite training: https://coastwatch.pfeg.noaa.gov/projects/erddap/
-* Work with satellite data in python (extract data from erddap): https://coastwatch.gitbook.io/satellite-course/tutorials/python-tutorial/1.-how-to-work-with-satellite-data-in-python 
-
-* pangeo data access (Rich Signell): http://gallery.pangeo.io/repos/rsignell-usgs/esip-gallery/05_ERDDAP_access.html 
