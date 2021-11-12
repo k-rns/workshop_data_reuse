@@ -210,10 +210,11 @@ dataframe["Variable Name"].unique()
 > > dataframe["Variable Name"].unique()
 > > ~~~
 > > {:.language-python}
-> {:.solution}
+> 
 {:.challenge}
 
-# NOTE:  RERRDAP: package for R users to work directly with erddap servers
+
+### RERRDAP: package for R users to work directly with erddap servers
 
 Information an using erddap: https://docs.ropensci.org/rerddap/articles/Using_rerddap.html  
 
