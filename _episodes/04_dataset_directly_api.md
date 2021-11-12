@@ -206,22 +206,13 @@ dataframe["Variable Name"].unique()
 > > dataframe = pd.read_csv(info_url) dataframe
 > >
 > > # get the unique variable names with pandas
-> >  dataframe["Variable Name"].unique()
+> > dataframe["Variable Name"].unique()
 > > ~~~
-> > {: .language-python}
-> {: .solution}
-{: .challenge}
+> > {:.language-python}
+> {:.solution}
+{:.challenge}
 
-
-
-
-
-
-
-
-
-
-#### NOTE:  RERRDAP: package for R users to work directly with erddap servers
+# NOTE:  RERRDAP: package for R users to work directly with erddap servers
 
 Information an using erddap: https://docs.ropensci.org/rerddap/articles/Using_rerddap.html  
 
