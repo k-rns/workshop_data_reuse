@@ -96,15 +96,5 @@ Searching the BGC-Argo data:
   * What is the time range the datasets have? (Hint click data tab)
   * Download a dataset in .csv format that ranges in time from May 1st, 2015 until May 3rd 2015
 
-Exercise from:  [Tabular Datasets with BGC-Argo data](https://dale-robinson.gitbook.io/coastwatch-satellite-course-may-2021/tutorials/erddap/tabular-datasets-bgc-argo-data)
 
-
-
-# Resources
-
-https://datalab.marine.rutgers.edu/2020/11/introduction-to-python-argo-float-data/ 
-
-https://coastwatch.gitbook.io/satellite-course/
-
-https://dale-robinson.gitbook.io/coastwatch-satellite-course-may-2021/
 

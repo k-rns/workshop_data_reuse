@@ -1,5 +1,3 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5683655.svg)](https://doi.org/10.5281/zenodo.5683655
-
 # Reusing Open Data with ERDDAP and Python
 
 Go to the lesson site to view this lesson: https://k-rns.github.io/workshop_data_reuse/ 
@@ -18,7 +16,7 @@ All participants should agree to abide by The Carpentries [Code of Conduct](http
 
 ## Citation
 
-Karen Soenen (2021, November 12).  https://k-rns.github.io/workshop_data_reuse/. Reusing Open Data with ERDDAP and Python. Zenodo. https://doi.org/10.5281/zenodo.5683655
+Karen Soenen (2021, November 12).  https://k-rns.github.io/workshop_data_reuse/. Reusing Open Data with ERDDAP and Python. Zenodo. 
 
 See also:  [CITATION](CITATION)
 

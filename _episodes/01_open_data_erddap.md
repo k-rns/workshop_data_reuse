@@ -88,13 +88,3 @@ Have you ever reused data from a data provider?
 
 
 
-
-
-# Resources
-
-The Turing Way: https://the-turing-way.netlify.app/reproducible-research/open/open-data.html 
-
-Soenen, K., York, A., Rauch, S., Haskins, C., Copley, N.,...D. (2021). **BCO-DMO: Supporting Open Oceanographic Data**. *Earth and Space Science Open Archive* *ESSOAr**; Washington, Aug 11, 2021. DOI:10.1002/**essoar**.10507728.1*
-
-
-
