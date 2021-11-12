@@ -1,7 +1,7 @@
 ---
 title: "Finding data in the ERDDAP data catalog"
-teaching: 15
-exercises: 15
+teaching: 25
+exercises: 10
 questions:
 - "How do I search for data in ERDDAP?"
 - "What information does a dataset hold?"
@@ -68,6 +68,8 @@ For example Google dataset search:
 
   ![image-20211026155703527](../assets/img/image-20211026155703527.png)
 
+
+
 ## Subsetting data
 
 Click on the data button. Here is the link to the dataset in erddap: https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_783911.html  
@@ -78,23 +80,25 @@ Click on the data button. Here is the link to the dataset in erddap: https://erd
 
 ### Download the data "Submit"
 
+
+
 ## Create a graph
 
 ERRDAP also provides a graph function for your datasets, but I will not go into this more in detail. 
 
 ![image-20211026200843217](../assets/img/image-20211026200843217.png)
 
+
+
 ## Exercise:
 
-Searching the BGC-Argo data:
-
-* Server: https://polarwatch.noaa.gov/erddap/
-* search “Biogeochemical-Argo” 
-* Questions: 
-  * how many datasets are being returned?
-  * What is the difference between the datasets? (Does the title give something away?)
-  * What is the time range the datasets have? (Hint click data tab)
-  * Download a dataset in .csv format that ranges in time from May 1st, 2015 until May 3rd 2015
+> * Searching the BGC-Argo data:
+> * Go to the ERDDAP server: https://polarwatch.noaa.gov/erddap/.  
+> * search “Biogeochemical-Argo” .  
+> * Q:  how many datasets are being returned?
+> * Q: What is the difference between the datasets? (Does the title give something away?)
+> * Q:  What is the time range the datasets have? (Hint click data tab)
+> * Download a dataset in .csv format that ranges in time from May 1st, 2015 until May 3rd 2015
 
 
 
