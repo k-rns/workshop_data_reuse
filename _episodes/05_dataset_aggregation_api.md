@@ -1,7 +1,7 @@
 ---
 title: "Aggregating multiple datasets"
-teaching: 10
-exercises: 30
+teaching: 30
+exercises: 0
 questions:
 - "How can I work with different datasets?"
 objectives:
@@ -189,7 +189,6 @@ plt.yticks(rotation=90)
 #ax1.set(ylabel='degrees celsius')
 #ax2.set(ylabel='degrees celsius')
 ```
-
 
 
 

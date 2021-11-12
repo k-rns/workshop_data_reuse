@@ -1,7 +1,7 @@
 ---
 title: "Online data to your Python environment"
 teaching: 25
-exercises: 0
+exercises: 20
 questions:
 - "How do I import an ERDDAP dataset into Python?"
 - "How do I interact with the dataset in Python"

@@ -10,20 +10,23 @@ objectives:
 - "Map spatial datasets "
 
 keypoints:
-- "There are keypackages necessary to import data from ERDDAP into Python: xarray"
-- "Data can be downloaded locally or be interacted with directly using erddapy"
-- "You can asses your data package in Python"
+- "There are key packages necessary to import data from ERDDAP into Python: xarray"
+- "xarray works similar to Pandas"
+- "xarray has a build in plotter for gridded datasets"
 ---
 
 # Working with gridded data
-Gridded data works with a different protocol called griddap. Instead of using the erddapy library. It is easier to import the data in .netcdf using the package xarray and netcdf
-Setting the constraints is a bit more straightforward
+Gridded data works with a different protocol called griddap. Instead of using the erddapy library. It is easier to import the data in .netcdf using the package xarray and netcdf.
+
+Setting the constraints with this packageg is a bit more straightforward
 
 **griddap request URLs must be in the form** 
 https://coastwatch.pfeg.noaa.gov/erddap/griddap/*[datasetID](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#datasetID)*.*[fileType](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#fileType)*{?*[query](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#query)*} 
+
 For example, 
 https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.htmlTable?analysed_sst[(2002-06-01T09:00:00Z)][(-89.99):1000:(89.99)][(-179.99):1000:(180.0)] 
-Thus, the query is often a data variable name (e.g., analysed_sst), followed by [(*start*):*stride*:(*stop*)] (or a shorter variation of that) for each of the variable's dimensions (for example, [time][latitude][longitude]). 
+
+The query is often a data variable name (e.g., analysed_sst), followed by [(*start*):*stride*:(*stop*)] (or a shorter variation of that) for each of the variable's dimensions (for example, [time][latitude][longitude]). 
 
 [Link]( https://github.com/k-rns/workshop_data_reuse/blob/gh-pages/_episodes/06_gridded_data.ipynb) to static Jupyter Notebook. Copy/Paste the code blocks into your own Jupyter Notebook
 
@@ -34,12 +37,7 @@ import xarray as xr
 import netCDF4 as nc
 ```
 
-
-
-Satellite data NASA sea surface temperature : **GHRSST Global 1-km Sea Surface Temperature (G1SST), Global, 0.01 Degree, 2010-
-2017, Daily**
-
-The data contains daily composits of SST with 1 km resolution
+Satellite data NASA sea surface temperature : **GHRSST Global 1-km Sea Surface Temperature (G1SST), Global, 0.01 Degree, 2010-2017, Daily** The data contains daily composites of SST with 1 km resolution
 
 Importing the downloaded data in Python.  Now that we've downloaded the data locally, we can import it and extract our variables of interest:
 
@@ -112,10 +110,4 @@ sst.isel(time=0).plot.imshow()
 ```
 
 
-
-## Resources
-
-From this repo: https://github.com/CoastWatch-PolarWatch/EDMW_2021_python_code number 1
-
-xarray datasets: https://xarray.pydata.org/en/v0.10.1/auto_gallery/plot_rasterio_rgb.html
 
