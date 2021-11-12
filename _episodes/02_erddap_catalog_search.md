@@ -99,6 +99,6 @@ ERRDAP also provides a graph function for your datasets, but I will not go into 
 > * Q: What is the difference between the datasets? (Does the title give something away?)
 > * Q:  What is the time range the datasets have? (Hint click data tab)
 > * Download a dataset in .csv format that ranges in time from May 1st, 2015 until May 3rd 2015
-
+{: .challenge}
 
 
