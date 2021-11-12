@@ -191,10 +191,11 @@ dataframe["Variable Name"].unique()
 > *  Who is the Principal Investigator on this dataset?
 > *  What is the start and end time of this dataset?
 {: .challenge}
-  
+
 ### Exercise
 
 > What are the unique variables for "bcodmo_dataset_807119?"
+> 
 > > #### Answer
 > > ~~~
 > > # find the variables
@@ -207,6 +208,7 @@ dataframe["Variable Name"].unique()
 > > # get the unique variable names with pandas
 > >  dataframe["Variable Name"].unique()
 > > ~~~
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
 
