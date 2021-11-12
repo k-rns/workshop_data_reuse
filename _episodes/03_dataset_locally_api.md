@@ -166,9 +166,9 @@ https://erddap.bco-dmo.org/erddap/tabledap/bcodmo_dataset_783911.htmlTable?Stati
 
 # Access 
 
-## Webbrowser 
+## Web browser 
 
-What happens when you copy and past that URL into a web browser
+What happens when you copy and past that URL into a web browser?
 
 ![image-20211026211630918](C:\Users\ksoenen\AppData\Roaming\Typora\typora-user-images\image-20211026211630918.png)
 
@@ -219,7 +219,7 @@ The urllib.request library helps with opening URLs. It is part of the erddapy pa
 import urllib.request
 ```
 
-Some characters cannot be part of a URL, like commas and >. When pasting a URL with comma's into your webbrowser it automatically translates those carachers into a different encoding before transmission. 
+Some characters cannot be part of a URL, like ','and '>'. When pasting a URL with comma's into your webbrowser it automatically translates those carachers into a different encoding before transmission. 
 
 ```python
 #define the url you want to download

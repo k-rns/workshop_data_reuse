@@ -71,19 +71,19 @@ You have to use a command line (Anaconda Prompt(Windows)  Terminal(Mac/Linux) to
 
    ```conda activate errdap```
    
-2. Install the package "pandas" 
+2. Install the package "pandas" and "matplotlib" from the anaconda main channel:
 
-   ```conda install -c anaconda pandas```
+   ```conda install -c anaconda pandas matplotlib```
 
-
-   You will be asked if you would like to install the packages after they are found.  Press Yes (y).
-
-3. Install the package "erddapy"
-
-   ```conda install -c conda-forge erddapy```
 
    You will be asked if you would like to install the packages after they are found.  Press Yes (y).
 
+3. Install the package "erddapy", "xarray" and "netCDF4" from the conda-forge channel.
+
+   ```conda install -c conda-forge xarray netCDF4 erddapy``` 
+
+   You will be asked if you would like to install the packages after they are found.  Press Yes (y).
+   
    You should see messages for Preparing, Verifying, and Executing the "transaction" and end with a line    that says "done"
 
 
@@ -91,10 +91,9 @@ You have to use a command line (Anaconda Prompt(Windows)  Terminal(Mac/Linux) to
 
    ```jupyter notebook```
 
+NOTE: I got the error "*jupyter' is not recognized as an internal or external command, operable program or batch file."* I installed jupyter in the environment with the following command: ```conda install -c anaconda jupyter```
 
-   NOTE: I got the error "*jupyter' is not recognized as an internal or external command, operable program or batch file."* I installed jupyter in the environment with the following command: ```conda install -c anaconda jupyter```
-
-6. Test if your your installs worked. See "Testing Your Installs" section Below.
+5. Test if your your installs worked. See "Testing Your Installs" section Below.
 
 
 
@@ -124,6 +123,12 @@ You have to use a command line (Anaconda Prompt(Windows)  Terminal(Mac/Linux) to
    ``` import pandas```
 
    ``` import erddapy```
+   
+   ```import xarray```
+   
+   ```netCDF4```
+   
+   
    
    ![image-20211020121824355](assets/img/jupyter_start_III.png)
 
