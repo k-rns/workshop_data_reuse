@@ -1,29 +1,26 @@
-# Reusing online data: ERDDAP
+# Reusing Open Data with ERDDAP and Python
+
+Go to the lesson site to view this lesson: https://k-rns.github.io/workshop_data_reuse/ 
 
 ## GitHub Template & Structure
-This lesson was constructed, in part, with a [lesson template](https://github.com/carpentries/styles) derived from work that is Copyright © The Carpentries (https://carpentries.org/) -  [License](https://github.com/carpentries/styles/blob/gh-pages/LICENSE.md) 
 
-[![Create a Slack Account with us](https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg)](https://swc-slack-invite.herokuapp.com/)
+This lesson was constructed with a [lesson template](https://github.com/carpentries/styles) derived from work that is Copyright © The Carpentries (https://carpentries.org/) -  [License](https://github.com/carpentries/styles/blob/gh-pages/LICENSE.md) 
 
 The newly developed course markdown files and Jupyter Notebooks can be found in the folder _episodes/
 
 The landing page schedule changes based on the headers in the individual markdown files. The order of the markdown files is based on the numbering of the .md names. So use name number if wanting to change the order of your lesson. 
 
+## Code of Conduct
 
-## Maintainer(s)
-
-Current maintainers of this lesson are 
-
-* Karen Soenen
-
-## Authors
-
-A list of contributors to the lesson can be found in [AUTHORS](AUTHORS)
+All participants should agree to abide by The Carpentries [Code of Conduct](https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html).
 
 ## Citation
 
-To cite this lesson, please consult with [CITATION](CITATION)
+Karen Soenen (2021, November 12).  https://k-rns.github.io/workshop_data_reuse/. Reusing Open Data with ERDDAP and Python. Zenodo. https://doi.org/10.5281/zenodo.5683655
 
-[lesson-example]: https://carpentries.github.io/lesson-example
+See also:  [CITATION](CITATION)
 
 ## License
+
+See [LICENSE](LICENSE) for more details about source content for this lesson and licenses.
+
