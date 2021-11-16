@@ -17,13 +17,13 @@ keypoints:
 
 {% include links.md %}
 
-We have just seen that we can search erddap for datsets. The main takeaways were:
+We have just seen that we can search erddap for datasets. The main takeaways were:
 
 * ERDDAP is a tool and many repositories can have an ERDDAP server, which means that there are **many erddap servers** around. 
 
 * You can search 2 types of data, also called **protocols**: tabledap & griddap 
 * A dataset in ERDDAP can be downloaded in many **different file types**, based on what you need.
-* You can **subset a dataset** based on constrainting the variables.
+* You can **subset a dataset** based on constraining the variables.
 
 In the next chapter, we'll see that an ERDDAP can not only be used in the web interface like we did, but also as a URL that computer programs can use  (in this case, to get data, graphs, and information about datasets).
 
@@ -241,7 +241,7 @@ Import the **Pandas library** to work with tables in your Python environment.
 ```python
 # Import the downloaded .csv data into jupyter notebooks with the package Pandas
 import pandas as pd
-pd.read_csv ("bcodmo_dataset_815732.csv)
+pd.read_csv ("bcodmo_dataset_815732.csv")
 dataframe = pd.read_csv ("bcodmo_dataset_815732.csv", dtype='unicode')
 print (dataframe)
 ```

@@ -59,7 +59,7 @@ Once you have made your data online available for people to re-use it, there can
 
 There is no "1 ERDDAP server", instead organisations and repositories have their own erddap server to distribute data to end users. These users can request data and get data out in various file formats.  Many institutes, repo's and organizations (including [NOAA](https://coastwatch.pfeg.noaa.gov/erddap/index.html), [NASA](https://podaac-uat.jpl.nasa.gov/erddap/index.html), and [USGS](https://geoport.usgs.esipfed.org/erddap/index.html)) run ERDDAP servers  to serve their data. 
 
-Each repository and/or program has its own type of data it is serving. To export data from a repository it is always useful to have a bit of a background of what data the serves contains and how the data stucture is. For this workshop, we will use data from the following repositories and programs: 
+Each repository and/or program has its own type of data it is serving. To export data from a repository it is always useful to have a bit of a background of what data the serves contains and how the data structure is. For this workshop, we will use data from the following repositories and programs: 
 
 [**BCO-DMO**](https://www.bco-dmo.org/)
 
